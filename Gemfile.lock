@@ -40,6 +40,7 @@ GEM
     autoprefixer-rails (6.3.6.2)
       execjs
     awesome_print (1.6.1)
+    bcrypt (3.1.11)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     bootstrap-sass (3.3.6)
@@ -47,7 +48,7 @@ GEM
       sass (>= 3.3.4)
     builder (3.2.2)
     byebug (9.0.5)
-    catpants (2.3.0)
+    catpants (2.5.0)
     coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.1.x)
@@ -161,9 +162,10 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print (~> 1.6, >= 1.6.1)
+  bcrypt (~> 3.1.7)
   bootstrap-sass
   byebug
-  catpants
+  catpants (= 2.5.0)
   coffee-rails (~> 4.1.0)
   hirb (~> 0.7.3)
   interactive_editor (~> 0.0.10)
