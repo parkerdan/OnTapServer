@@ -5,5 +5,7 @@
   <%= @bar.title %>
 </p>
 
-<%= link_to 'Edit', edit_bar_path(@bar) %> |
+<% if @bar.user_id == current_user %>
+<%= link_to 'Edit', edit_bar_path(@bar) %>
+<% end %>
 <%= link_to 'Back', bars_path %>

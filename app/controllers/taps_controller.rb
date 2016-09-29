@@ -1,6 +1,6 @@
 class TapsController < ApplicationController
   before_action :set_tap, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, except: [:show, :index]
   # GET /taps
   # GET /taps.json
   def index
@@ -25,14 +25,13 @@ class TapsController < ApplicationController
   # POST /taps.json
   def create
     @tap = Tap.new(tap_params)
+    @tap.user_id = current_user.id
 
     respond_to do |format|
       if @tap.save
         format.html { redirect_to @tap, notice: 'Tap was successfully created.' }
-        format.json { render :show, status: :created, location: @tap }
       else
         format.html { render :new }
-        format.json { render json: @tap.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -43,10 +42,8 @@ class TapsController < ApplicationController
     respond_to do |format|
       if @tap.update(tap_params)
         format.html { redirect_to @tap, notice: 'Tap was successfully updated.' }
-        format.json { render :show, status: :ok, location: @tap }
       else
         format.html { render :edit }
-        format.json { render json: @tap.errors, status: :unprocessable_entity }
       end
     end
   end

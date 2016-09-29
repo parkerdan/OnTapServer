@@ -1,6 +1,6 @@
 class BarsController < ApplicationController
   before_action :set_bar, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, except: [:show, :index]
   # GET /bars
   # GET /bars.json
   def index
@@ -25,14 +25,13 @@ class BarsController < ApplicationController
   # POST /bars.json
   def create
     @bar = Bar.new(bar_params)
+    @bar.user_id = current_user.id
 
     respond_to do |format|
       if @bar.save
         format.html { redirect_to @bar, notice: 'Bar was successfully created.' }
-        format.json { render :show, status: :created, location: @bar }
       else
         format.html { render :new }
-        format.json { render json: @bar.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -43,10 +42,8 @@ class BarsController < ApplicationController
     respond_to do |format|
       if @bar.update(bar_params)
         format.html { redirect_to @bar, notice: 'Bar was successfully updated.' }
-        format.json { render :show, status: :ok, location: @bar }
       else
         format.html { render :edit }
-        format.json { render json: @bar.errors, status: :unprocessable_entity }
       end
     end
   end
