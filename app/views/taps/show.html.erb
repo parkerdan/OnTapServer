@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @tap.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @tap.description %>
+</p>
+
+<p>
+  <strong>Imageid:</strong>
+  <%= @tap.imageId %>
+</p>
+
+<p>
+  <strong>Tapnumber:</strong>
+  <%= @tap.tapNumber %>
+</p>
+
+<p>
+  <strong>Bar:</strong>
+  <%= @tap.bar %>
+</p>
+
+<%= link_to 'Edit', edit_tap_path(@tap) %> |
+<%= link_to 'Back', taps_path %>

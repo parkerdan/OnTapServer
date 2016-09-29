@@ -1,0 +1,62 @@
+<%= form_for(@tap) do |f| %>
+<% if @tap.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@tap.errors.count, "error") %> prohibited this tap from being saved:</h2>
+
+    <ul>
+    <% @tap.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="field">
+  <h4>Name Your Tap</h4>
+  <%= f.text_field :title %>
+</div>
+
+<div class="field">
+  <h4>Enter a short description</h4>
+  <%= f.text_field :description %>
+</div>
+
+<div class="field">
+  <h4>Tap Number</h4>
+  <%= f.text_field :tapNumber %>
+</div>
+
+<div class="field">
+  <h4>Select Image to display</h4>
+
+  <% i = 0 %>
+  <% while i < 29 do %>
+    <div class="container">
+      <div class="radio_button_image_container">
+        <%= f.radio_button(:imageId, i, class: 'check-box-box') %>
+        <%= image_tag "#{i}.png" %>
+      </div>
+      <div class="radio_button_image_container margin-left">
+        <%= f.radio_button(:imageId, i + 1, class: 'check-box-box') %>
+        <%= image_tag "#{i + 1}.png" %>
+      </div>
+      <div class="radio_button_image_container margin-left">
+        <%= f.radio_button(:imageId, i + 2, class: 'check-box-box') %>
+        <%= image_tag "#{i + 2}.png" %>
+      </div>
+      <div class="radio_button_image_container margin-left">
+        <%= f.radio_button(:imageId, i + 3, class: 'check-box-box') %>
+        <%= image_tag "#{i + 3}.png" %>
+      </div>
+    </div>
+    <% i += 4 %>
+  <% end %>
+
+</div>
+
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

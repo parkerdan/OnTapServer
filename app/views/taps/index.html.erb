@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Taps</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Imageid</th>
+      <th>Tapnumber</th>
+      <th>Bar</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @taps.each do |tap| %>
+      <tr>
+        <td><%= tap.title %></td>
+        <td><%= tap.description %></td>
+        <td><%= tap.imageId %></td>
+        <td><%= tap.tapNumber %></td>
+        <td><%= tap.bar %></td>
+        <td><%= link_to 'Show', tap %></td>
+        <td><%= link_to 'Edit', edit_tap_path(tap) %></td>
+        <td><%= link_to 'Destroy', tap, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tap', new_tap_path %>

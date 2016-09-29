@@ -1,0 +1,47 @@
+<%= form_for(@tap) do |f| %>
+<% if @tap.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@tap.errors.count, "error") %> prohibited this tap from being saved:</h2>
+
+    <ul>
+    <% @tap.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="field">
+  <h4>Name</h4>
+  <%= f.text_field :title, class: "form-control" %>
+</div>
+
+<div class="field">
+  <h4>Short description</h4>
+  <%= f.text_field :description, class: "form-control"  %>
+</div>
+
+<div class="field">
+  <h4>Select Image to display</h4>
+
+<div class="flex-container">
+  <% i = 0 %>
+  <% while i < 30 do %>
+    <div class="option-container">
+      <div class="radio-button">
+        <%= f.radio_button(:imageId, i, class: "margin-horizontal") %>
+      </div>
+      <%= image_tag "#{i}.png" %>
+    </div>
+    <% i += 1 %>
+  <% end %>
+</div>
+
+</div>
+
+
+
+  <div class="actions">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+<% end %>
