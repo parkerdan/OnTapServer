@@ -1,0 +1,69 @@
+
+var listener = (window.Turbolinks) ? "page:change":"DOMContentLoaded";
+
+function change(value){
+  $("#selected-color").css("background-color", value);
+};
+
+function slide(event,ui){
+  var newCount = ui.value;
+  console.log('New Count');
+  console.log(newCount);
+
+
+  var currentCount = $('#hops').children().length;
+  console.log('currentCount');
+  console.log(currentCount);
+
+  if (newCount > currentCount) {
+    var diff = newCount - currentCount;
+    for (var i = 0; i < diff; i++) {
+      $("#hops").append("<img src='<%= asset_path("hops.png") %>'>");
+    }
+  } else if (newCount < currentCount) {
+    var diff = currentCount - newCount;
+    for (var i = 0; i < diff; i++) {
+      $('#hops img').last().remove();
+    }
+  }
+
+
+
+  // $("#hops").append("<img src='<%= asset_path("hops.png") %>'>");
+};
+
+document.addEventListener(listener, function(){
+
+
+  if (document.getElementById("beer-color") !== null) {
+
+    var selectedColor = ($('#beer-color').data().color);
+    if (selectedColor === null) {
+      var defaultValue = "#ffcc00";
+    } else {
+      var defaultValue = selectedColor
+    };
+
+    change(defaultValue);
+
+    $('#beer-color').minicolors({
+      defaultValue:defaultValue,
+      inline:true,
+      control:'hue',
+      change: change,
+      swatches: ['#FFCC00','#FBB123','#DE7C00','#BB5100','#9B3200','#7B1A00','#36080A']
+    });
+
+    var slider = $( "#hoppiness-value" ).slider({
+      animate: true,
+      step:1,
+      min:0,
+      max:20,
+      slide: slide,
+    });
+
+  }
+
+
+
+});
