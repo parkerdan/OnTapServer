@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  resources :taps
-  resources :bars
+  resources :bars do
+    resources :taps, only: [:create, :destroy, :new, :edit, :update]
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   resources :users, only: [:new, :create] do

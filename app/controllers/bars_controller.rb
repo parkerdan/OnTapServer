@@ -10,6 +10,7 @@ class BarsController < ApplicationController
   # GET /bars/1
   # GET /bars/1.json
   def show
+    @taps = Tap.where(bar_id: @bar.id)
   end
 
   # GET /bars/new

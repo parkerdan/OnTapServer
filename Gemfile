@@ -17,9 +17,9 @@ gem 'simple_form'
 gem 'interactive_editor', '~> 0.0.10'
 gem 'hirb', '~> 0.7.3'
 gem 'awesome_print', '~> 1.6', '>= 1.6.1'
-gem "bootstrap-sass"
 gem 'puma'
-gem 'catpants', '2.5.0'
+gem 'catpants', '2.5.1'
+gem 'jquery-minicolors-rails'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks

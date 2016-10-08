@@ -16,3 +16,66 @@
 .radio-button {
   margin-right: 25px;
 }
+
+.bar-tap-container {
+  display: flex;
+  flex-direction: column;
+  height: 310px;
+  width: 200px;
+  margin-left: 25px;
+}
+
+.inner-bar-tap-container {
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  width: 200px;
+  border: 1px solid black;
+}
+
+.tap-number {
+  display: flex;
+  flex: 1;
+  justify-content: flex-start;
+  padding-left: 10px;
+}
+
+.tap-edit {
+  display: flex;
+  flex: 2;
+  justify-content: flex-end;
+  padding-right: 10px;
+}
+
+.bar-tap-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.bar-tap-title {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  text-align: center;
+  flex:.8;
+}
+
+.image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0px;
+  flex:2;
+}
+
+.bar-tap-description {
+  margin-top: 0px;
+  text-align: center;
+  flex:1;
+  margin-bottom: 0px;
+}
+
+#selected-color {
+  height: 50px;
+  width: 500px;
+}

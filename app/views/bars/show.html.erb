@@ -1,11 +1,38 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @bar.title %>
-</p>
-
-<% if @bar.user_id == current_user %>
-<%= link_to 'Edit', edit_bar_path(@bar) %>
+<h1><%= @bar.title %> </h1>
+<% if user_signed_in? && @bar.user_id == current_user.id %>
+<%= link_to 'Update Bar Info', edit_bar_path(@bar) %>
+<br/>
+<%= link_to 'Add Tap To Bar', new_bar_tap_path(@bar) %>
 <% end %>
+
+<br/>
 <%= link_to 'Back', bars_path %>
+<br/>
+<br/>
+
+<div class="flex-container">
+<% @taps.each do |t| %>
+  <div class="bar-tap-container">
+    <div class="bar-tap-header">
+      <div class="tap-number">
+        <p>Tap <%= t.tapNumber %> </p>
+      </div>
+
+      <div class="tap-edit">
+        <% if user_signed_in? && @bar.user_id == current_user.id %>
+        <p class="tap-edit"><%= link_to 'Update Tap Info', edit_bar_tap_path(@bar,t) %></p>
+        <% end %>
+      </div>
+
+    </div>
+
+    <div class="inner-bar-tap-container"/>
+      <h2 class="bar-tap-title"><%= t.title %></h2>
+      <div class="image-container">
+        <%= image_tag "#{t.imageId}.png"%>
+      </div>
+      <p class="bar-tap-description"><%= t.description %></p>
+    </div>
+  </div>
+<% end %>
+</div>

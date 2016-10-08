@@ -1,11 +1,11 @@
 <%= simple_form_for(@bar) do |f| %>
-  <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :title %>
+  <div class="form-input-container">
+    <%= f.input :title, class: "form-input" %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+
+  <div class="button-container">
+    <%= f.button :submit, class: "button" %>
   </div>
 <% end %>

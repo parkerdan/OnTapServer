@@ -12,4 +12,33 @@
  *
  *= require_tree .
  *= require_self
+ *= require jquery.minicolors
  */
+
+body {
+  margin: 0;
+}
+
+.container {
+  padding: 10px;
+}
+
+.button {
+  padding: 15px;
+  background-color: green;
+  border-radius: 10px;
+}
+
+.button-container {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.form-input-container {
+  background-color: pink;
+  padding: 10px;
+}
+
+.form-input {
+  margin-left: 20px;
+}
