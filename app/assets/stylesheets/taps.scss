@@ -15,8 +15,61 @@
   right: 40px;
   width: 30%;
   height: 500px;
-  background-color: purple;
 }
+
+.preview-card {
+  height: 500px;
+  width: 310px;
+  overflow: hidden;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  display: flex;
+  flex: 1;
+  padding: 0px 5px;
+}
+
+#title-preview {
+  text-align: center;
+  font-size: 40px;
+}
+
+.card-hops {
+  display: flex;
+  flex: .5;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0px 5px;
+}
+
+.card-hop-pic {
+  width: 30px;
+  height: 30px;
+}
+
+.card-picture {
+  display: flex;
+  flex: 1;
+}
+
+.card-description {
+  display: flex;
+  flex: 1.5;
+  padding: 0px 5px;
+}
+
+#description-preview {
+  text-align: center;
+  font-size: 30px;
+}
+
+
+
+
+
 
 .flex-container {
   display: flex;
@@ -95,13 +148,6 @@
 #hoppiness-value {
   height: 10px;
   width: 80%;
-}
-
-#hops {
-  display: flex;
-  flex-direction: row;
-  height: 50px;
-  margin-bottom: 10px;
 }
 
 .hop-detail-pic {

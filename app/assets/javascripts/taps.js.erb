@@ -24,7 +24,7 @@ function slide(event,ui){
   if (newCount > currentCount) {
     var diff = newCount - currentCount;
     for (var i = 0; i < diff; i++) {
-      $("#hops").append("<img src='<%= asset_path("hops.png") %>' class='hop-detail-pic'>");
+      $("#hops").append("<img src='<%= asset_path("hops.png") %>' class='card-hop-pic'>");
     }
   } else if (newCount < currentCount) {
     var diff = currentCount - newCount;

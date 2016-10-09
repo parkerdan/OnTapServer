@@ -54,8 +54,6 @@
 
     </div>
 
-
-
     <div>
       <%= f.submit class: "button" %>
     </div>
@@ -63,20 +61,25 @@
   </div>
 
   <div class="tap-preview">
-    <div class="inner-bar-tap-container" id="selected-color">
+    <div class="preview-card" id="selected-color">
 
-      <div class="center-all" >
-        <h2 class="bar-tap-title selected-text" id="title-preview" >Title</h2>
+      <div class="card-title center-all">
+        <h1 class="selected-text" id="title-preview" >Title</h1>
       </div>
 
-      <div class="flex-container padding" id="hops">
+      <div class="card-hops center-all" id="hops">
       </div>
 
-      <div class="image-container">
+      <div class="card-picture center-all">
         <%= image_tag "", id:"selected-image" %>
       </div>
-      <p class="bar-tap-description selected-text" id="description-preview">Description</p>
+
+      <div class="card-description center-all">
+        <p class="selected-text" id="description-preview">Description</p>
+      </div>
+
     </div>
+
   </div>
 
 </div>
