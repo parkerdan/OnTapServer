@@ -1,3 +1,23 @@
+.tap-maker {
+  display: flex;
+  flex-direction: row;
+}
+
+.tap-maker-col-one {
+  display: flex;
+  background-color: pink;
+  flex-direction: column;
+  width: 60%;
+}
+
+.tap-preview {
+  position: fixed;
+  right: 40px;
+  width: 30%;
+  height: 500px;
+  background-color: purple;
+}
+
 .flex-container {
   display: flex;
   flex-direction: row;
@@ -67,11 +87,6 @@
   margin-bottom: 0px;
 }
 
-#selected-color {
-  height: 50px;
-  width: 500px;
-}
-
 #selected-text {
   height: 50px;
   width: 500px;
@@ -79,7 +94,7 @@
 
 #hoppiness-value {
   height: 10px;
-  width: 630px;
+  width: 80%;
 }
 
 #hops {

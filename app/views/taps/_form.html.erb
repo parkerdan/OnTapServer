@@ -1,62 +1,82 @@
-<%= simple_form_for([@bar,@tap]) do |f| %>
+<div class="tap-maker">
+  <div class="tap-maker-col-one">
+    <%= simple_form_for([@bar,@tap]) do |f| %>
 
-<div class="field">
-  <h4>Name</h4>
-  <%= f.text_field :title, class: "form-control" %>
-</div>
-
-<div class="field">
-  <h4>Short description</h4>
-  <%= f.text_field :description, class: "form-control"  %>
-</div>
-
-
-<div class="field">
-  <h4>Beer Color</h4>
-  <div id="selected-color"></div>
-  <%= f.text_field :color, id: "beer-color", data: {color: @tap.color} %>
-</div>
-
-<div class="field">
-  <h4>Text Color <small>(for display purposes)</small></h4>
-  <div id="selected-text"></div>
-  <%= f.text_field :text_color, id: "text-color", data: {text_color: @tap.text_color} %>
-</div>
-
-
-
-<div class="field">
-  <h4>Hoppiness</h4>
-  <div id="hops"></div>
-  <div id="hoppiness-value"></div>
-  <%= f.hidden_field :hoppiness, id: "tap-model-hop-val", data: {hoppiness: @tap.hoppiness} %>
-</div>
-
-
-
-<div class="field">
-  <h4>Select Image to display</h4>
-
-<div class="flex-container">
-  <% i = 0 %>
-  <% while i < 30 do %>
-    <div class="option-container">
-      <div class="radio-button">
-        <%= f.radio_button(:imageId, i, class: "margin-horizontal", id:"option-#{i}") %>
-      </div>
-      <label for="option-<%= i %>">
-        <%= image_tag "#{i}.png" %>
-      </label>
+    <div>
+      <h4>Name</h4>
+      <%= f.text_field :title, id: "tap-title" %>
     </div>
-    <% i += 1 %>
-  <% end %>
-</div>
 
-</div>
+    <div>
+      <h4>Short description</h4>
+      <%= f.text_field :description, id: "tap-description" %>
+    </div>
+
+
+    <div>
+      <h4>Beer Color</h4>
+      <%= f.text_field :color, id: "beer-color", data: {color: @tap.color} %>
+    </div>
+
+    <div>
+      <h4>Text Color <small>(for display purposes)</small></h4>
+      <div id="selected-text"></div>
+      <%= f.text_field :text_color, id: "text-color", data: {text_color: @tap.text_color} %>
+    </div>
 
 
 
-  <div>
-    <%= f.submit class: "button" %>
+    <div>
+      <h4>Hoppiness</h4>
+      <div id="hoppiness-value"></div>
+      <%= f.hidden_field :hoppiness, id: "tap-model-hop-val", data: {hoppiness: @tap.hoppiness} %>
+    </div>
+
+
+
+    <div>
+      <h4>Select Image to display</h4>
+
+      <div class="flex-container">
+        <% i = 0 %>
+        <% while i < 30 do %>
+        <div class="option-container" data-image_id="<%= i %>">
+          <div class="radio-button">
+            <%= f.radio_button(:imageId, i, class: "margin-horizontal", id:"option-#{i}") %>
+          </div>
+          <label for="option-<%= i %>">
+            <%= image_tag "#{i}.png" %>
+          </label>
+        </div>
+        <% i += 1 %>
+        <% end %>
+      </div>
+
+    </div>
+
+
+
+    <div>
+      <%= f.submit class: "button" %>
+    </div>
+    <% end %>
   </div>
-<% end %>
+
+  <div class="tap-preview">
+    <div class="inner-bar-tap-container" id="selected-color">
+
+      <div class="center-all" >
+        <h2 class="bar-tap-title selected-text" id="title-preview" >Title</h2>
+      </div>
+
+      <div class="flex-container padding" id="hops">
+      </div>
+
+      <div class="image-container">
+        <%= image_tag "", id:"selected-image" %>
+      </div>
+      <p class="bar-tap-description selected-text" id="description-preview">Description</p>
+    </div>
+  </div>
+
+</div>

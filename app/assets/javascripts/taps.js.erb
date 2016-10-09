@@ -6,9 +6,15 @@ function change(value){
 };
 
 function changeText(value){
-  $("#selected-text").css("background-color", value);
+  $(".selected-text").css("color", value);
 };
 
+function addOnClick(element, i){
+  element.addEventListener('click', function () {
+    $("#option-" + i).prop("checked", true);
+    $("#selected-image").attr({ src: "/assets/" + i + ".png" });
+  });
+};
 
 function slide(event,ui){
   var newCount = ui.value;
@@ -18,7 +24,7 @@ function slide(event,ui){
   if (newCount > currentCount) {
     var diff = newCount - currentCount;
     for (var i = 0; i < diff; i++) {
-      $("#hops").append("<img src='<%= asset_path("hops.png") %>'>");
+      $("#hops").append("<img src='<%= asset_path("hops.png") %>' class='hop-detail-pic'>");
     }
   } else if (newCount < currentCount) {
     var diff = currentCount - newCount;
@@ -81,10 +87,26 @@ document.addEventListener(listener, function(){
       min:0,
       max:20,
       slide: slide,
-      value: hopDefault
+      value: hopDefault,
     });
 
     slide({},{value:hopDefault});
+
+    var images = $(".option-container");
+
+    for (var i = 0; i < images.length; i++) {
+      addOnClick(images[i],i)
+    };
+
+    $('#tap-title').keyup(function(){
+      $('#title-preview').text($(this).val());
+    });
+
+    $('#tap-description').keyup(function(){
+      $('#description-preview').text($(this).val());
+    });
+
+
 
   }
 
