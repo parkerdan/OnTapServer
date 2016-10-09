@@ -1,33 +1,43 @@
-<h1><%= @bar.title %> </h1>
+<h1 class="section-header"><%= @bar.title %> </h1>
+
+
 <% if user_signed_in? && @bar.user_id == current_user.id %>
-<%= link_to 'Update Bar Info', edit_bar_path(@bar) %>
-<br/>
-<%= link_to 'Add Tap To Bar', new_bar_tap_path(@bar) %>
+  <div class="margin-left">
+    <p><%= link_to 'Update Bar Info', edit_bar_path(@bar), class: "button blue" %></p>
+    <br>
+    <p><%= link_to 'Add Tap To Bar', new_bar_tap_path(@bar), class: "button green" %></p>
+  </div>
+<% end %>
+<br>
+<% if @taps.count > 0 %>
+<h2>Taps</h2>
 <% end %>
 
-<br/>
-<%= link_to 'Back', bars_path %>
-<br/>
-<br/>
 
 <div class="flex-container">
 <% @taps.each do |t| %>
   <div class="bar-tap-container">
-    <div class="bar-tap-header">
-      <div class="tap-number">
-        <p>Tap <%= t.tapNumber %> </p>
-      </div>
 
+    <div>
       <div class="tap-edit">
         <% if user_signed_in? && @bar.user_id == current_user.id %>
-        <p class="tap-edit"><%= link_to 'Update Tap Info', edit_bar_tap_path(@bar,t) %></p>
+        <p><%= link_to 'Update Tap Info', edit_bar_tap_path(@bar,t), class: "small-button blue" %></p>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="inner-bar-tap-container" style="background-color:<%= t.color %>">
+
+      <div class="center-all" >
+        <h2 class="bar-tap-title" ><%= t.title %></h2>
+      </div>
+
+      <div class="flex-container padding">
+        <% t.hoppiness.times do |i| %>
+        <%= image_tag "hops.png", class: "hop-detail-pic"%>
         <% end %>
       </div>
 
-    </div>
-
-    <div class="inner-bar-tap-container"/>
-      <h2 class="bar-tap-title"><%= t.title %></h2>
       <div class="image-container">
         <%= image_tag "#{t.imageId}.png"%>
       </div>

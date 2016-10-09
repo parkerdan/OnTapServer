@@ -12,16 +12,24 @@
 
 
 <div class="field">
-  <h4>Color Approximation</h4>
+  <h4>Beer Color</h4>
   <div id="selected-color"></div>
   <%= f.text_field :color, id: "beer-color", data: {color: @tap.color} %>
 </div>
+
+<div class="field">
+  <h4>Text Color <small>(for display purposes)</small></h4>
+  <div id="selected-text"></div>
+  <%= f.text_field :text_color, id: "text-color", data: {text_color: @tap.text_color} %>
+</div>
+
 
 
 <div class="field">
   <h4>Hoppiness</h4>
   <div id="hops"></div>
   <div id="hoppiness-value"></div>
+  <%= f.hidden_field :hoppiness, id: "tap-model-hop-val", data: {hoppiness: @tap.hoppiness} %>
 </div>
 
 

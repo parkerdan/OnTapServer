@@ -5,15 +5,15 @@ function change(value){
   $("#selected-color").css("background-color", value);
 };
 
+function changeText(value){
+  $("#selected-text").css("background-color", value);
+};
+
+
 function slide(event,ui){
   var newCount = ui.value;
-  console.log('New Count');
-  console.log(newCount);
-
-
+  $('input#tap-model-hop-val').val(newCount);
   var currentCount = $('#hops').children().length;
-  console.log('currentCount');
-  console.log(currentCount);
 
   if (newCount > currentCount) {
     var diff = newCount - currentCount;
@@ -26,10 +26,6 @@ function slide(event,ui){
       $('#hops img').last().remove();
     }
   }
-
-
-
-  // $("#hops").append("<img src='<%= asset_path("hops.png") %>'>");
 };
 
 document.addEventListener(listener, function(){
@@ -41,8 +37,24 @@ document.addEventListener(listener, function(){
     if (selectedColor === null) {
       var defaultValue = "#ffcc00";
     } else {
-      var defaultValue = selectedColor
+      var defaultValue = selectedColor;
     };
+
+    var selectedTextColor = ($('#text-color').data().text_color);
+    if (selectedTextColor === null) {
+      var defaultTextValue = "#FFFFFF";
+    } else {
+      var defaultTextValue = selectedTextColor;
+    };
+
+
+    var hoppiness = ($('#tap-model-hop-val').data().hoppiness);
+
+    if (hoppiness === null) {
+      var hopDefault = 10;
+    } else {
+      var hopDefault = hoppiness;
+    }
 
     change(defaultValue);
 
@@ -54,13 +66,25 @@ document.addEventListener(listener, function(){
       swatches: ['#FFCC00','#FBB123','#DE7C00','#BB5100','#9B3200','#7B1A00','#36080A']
     });
 
+    $('#text-color').minicolors({
+      defaultValue:defaultTextValue,
+      inline:true,
+      control:'hue',
+      change: changeText,
+      swatches: ['#FFFFFF','#FBB123','#DE7C00','#BB5100','#9B3200','#7B1A00','#36080A']
+    });
+
+
     var slider = $( "#hoppiness-value" ).slider({
       animate: true,
       step:1,
       min:0,
       max:20,
       slide: slide,
+      value: hopDefault
     });
+
+    slide({},{value:hopDefault});
 
   }
 

@@ -20,26 +20,73 @@ body {
   margin: 0;
 }
 
-.container {
-  padding: 10px;
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+a:hover {
+  opacity:0.3;
+}
+
+.page-container {
+  padding: 20px 40px;
+}
+
+.green {
+  background-color: green;
+}
+
+.red {
+  background-color: red;
+}
+
+.blue {
+  background-color: blue;
 }
 
 .button {
   padding: 15px;
-  background-color: green;
   border-radius: 10px;
+  color: white;
+  font-size: 20px;
 }
 
-.button-container {
-  margin-top: 25px;
-  margin-bottom: 25px;
+.small-button {
+  padding: 5px;
+  border-radius: 10px;
+  color: white;
+  font-size: 15px;
 }
 
-.form-input-container {
-  background-color: pink;
+
+.text-input {
+  height: 50px;
+  width: 500px;
   padding: 10px;
+  font-size: 20px;
+  margin-bottom: 20px;
 }
 
-.form-input {
+.section-header {
+  margin-bottom: 50px;
+  font-size: 35px;
+}
+
+.margin-left {
+  margin-left: 50px;
+}
+
+.margin-little-left {
   margin-left: 20px;
+}
+
+.center-all {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.padding {
+  padding: 5px;
 }

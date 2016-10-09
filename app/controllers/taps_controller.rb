@@ -59,9 +59,11 @@ class TapsController < ApplicationController
   # DELETE /taps/1
   # DELETE /taps/1.json
   def destroy
+    @bar = Bar.find(params[:bar_id])
+
     @tap.destroy
     respond_to do |format|
-      format.html { redirect_to taps_url, notice: 'Tap was successfully destroyed.' }
+      format.html { redirect_to bar_path(@bar), notice: 'Tap was successfully destroyed.' }
     end
   end
 
@@ -73,6 +75,6 @@ class TapsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tap_params
-      params.require(:tap).permit(:title, :description, :imageId, :tapNumber, :bar_id, :color)
+      params.require(:tap).permit(:title, :description, :imageId, :tapNumber, :bar_id, :color, :hoppiness, :text_color)
     end
 end

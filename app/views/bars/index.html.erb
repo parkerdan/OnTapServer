@@ -1,5 +1,13 @@
-<h1>Registered Bars</h1>
+<h1 class="section-header">Registered Bars</h1>
 
-  <% @bars.each do |bar| %>
-      <h3><%= link_to bar.title, bar %></h3>
-  <% end %>
+<div class="margin-left">
+  <ul>
+    <% @bars.each do |bar| %>
+        <li><h2><%= link_to bar.title, bar %></h2>
+          <div class="margin-little-left">
+            <p class="bar-tap-number"><%= Tap.where(bar_id:bar.id).count %> Taps<p>
+          </div>
+        </li>
+    <% end %>
+  </ul>
+</div>

@@ -1,11 +1,13 @@
 <%= simple_form_for(@bar) do |f| %>
 
-  <div class="form-input-container">
-    <%= f.input :title, class: "form-input" %>
+  <div>
+    <h3><%= f.label :title, "Bar Title" %></h3>
+
+    <%= f.text_field :title, class: "text-input" %>
   </div>
 
 
-  <div class="button-container">
-    <%= f.button :submit, class: "button" %>
+  <div>
+    <%= f.button :submit, class: "button green" %>
   </div>
 <% end %>
