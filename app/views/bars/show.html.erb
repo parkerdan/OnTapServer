@@ -14,34 +14,36 @@
 <% end %>
 
 
-<div class="flex-container">
+<div class="bar-taps-container">
 <% @taps.each do |t| %>
   <div class="bar-tap-container">
 
-    <div>
-      <div class="tap-edit">
-        <% if user_signed_in? && @bar.user_id == current_user.id %>
-        <p><%= link_to 'Update Tap Info', edit_bar_tap_path(@bar,t), class: "small-button blue" %></p>
-        <% end %>
-      </div>
+    <div class="bar-tap-edit-container center-all">
+      <% if user_signed_in? && @bar.user_id == current_user.id %>
+      <p><%= link_to 'Update Tap Info', edit_bar_tap_path(@bar,t), class: "small-button blue" %></p>
+      <% end %>
     </div>
 
-    <div class="inner-bar-tap-container" style="background-color:<%= t.color %>">
+    <div class="preview-card" style="background-color:<%= t.color %>">
 
-      <div class="center-all" >
-        <h2 class="bar-tap-title" ><%= t.title %></h2>
+      <div class="card-title center-all" >
+        <h1 class="bar-tap-title" style="color:<%= t.text_color %>"><%= t.title %></h1>
       </div>
 
-      <div class="flex-container padding">
+      <div class="card-hops center-all">
         <% t.hoppiness.times do |i| %>
-        <%= image_tag "hops.png", class: "hop-detail-pic"%>
+        <%= image_tag "hops.png", class: "card-hop-pic"%>
         <% end %>
       </div>
 
-      <div class="image-container">
+      <div class="card-picture center-all">
         <%= image_tag "#{t.imageId}.png"%>
       </div>
-      <p class="bar-tap-description"><%= t.description %></p>
+
+      <div class="card-description center-all">
+        <p class="bar-tap-description" style="color:<%= t.text_color %>"><%= t.description %></p>
+      </div>
+
     </div>
   </div>
 <% end %>

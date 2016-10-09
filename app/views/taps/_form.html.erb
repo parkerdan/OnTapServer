@@ -2,45 +2,48 @@
   <div class="tap-maker-col-one">
     <%= simple_form_for([@bar,@tap]) do |f| %>
 
-    <div>
-      <h4>Name</h4>
-      <%= f.text_field :title, id: "tap-title" %>
+    <div class="margin-left">
+      <h2>Title</h2>
+      <%= f.text_field :title, id: "tap-title", class:"text-input", data: {title: @tap.title} %>
     </div>
 
-    <div>
-      <h4>Short description</h4>
-      <%= f.text_field :description, id: "tap-description" %>
-    </div>
-
-
-    <div>
-      <h4>Beer Color</h4>
-      <%= f.text_field :color, id: "beer-color", data: {color: @tap.color} %>
-    </div>
-
-    <div>
-      <h4>Text Color <small>(for display purposes)</small></h4>
-      <div id="selected-text"></div>
-      <%= f.text_field :text_color, id: "text-color", data: {text_color: @tap.text_color} %>
+    <div class="margin-left">
+      <h2>Description</h2>
+      <%= f.text_area :description, id: "tap-description", class:"text-field", data: {description: @tap.description} %>
     </div>
 
 
+    <div class="color-pickers">
+      <div class="color-picker center-all">
+        <h4>Beer Color <small>(  will be card background color  )</small></h4>
+        <%= f.text_field :color, id: "beer-color", data: {color: @tap.color} %>
+      </div>
+
+      <div class="color-picker center-all">
+        <h4>Text Color <small>(  make it look pretty 😉  )</small></h4>
+        <div id="selected-text"></div>
+        <%= f.text_field :text_color, id: "text-color", data: {textColor: @tap.text_color} %>
+      </div>
+
+    </div>
+
+
 
     <div>
-      <h4>Hoppiness</h4>
+      <h2>Hoppiness <small>( ..move slider.. )</small></h2>
       <div id="hoppiness-value"></div>
-      <%= f.hidden_field :hoppiness, id: "tap-model-hop-val", data: {hoppiness: @tap.hoppiness} %>
+      <%= f.hidden_field :hoppiness, id: "tap-model-hop-val", data: {hoppiness: @tap.hoppiness,selectedimage:@tap.imageId} %>
     </div>
 
 
 
     <div>
-      <h4>Select Image to display</h4>
+      <h2>Select Image to display</h2>
 
-      <div class="flex-container">
+      <div class="image-selector">
         <% i = 0 %>
         <% while i < 30 do %>
-        <div class="option-container" data-image_id="<%= i %>">
+        <div class="option-container center-all" data-image_id="<%= i %>">
           <div class="radio-button">
             <%= f.radio_button(:imageId, i, class: "margin-horizontal", id:"option-#{i}") %>
           </div>
@@ -55,7 +58,7 @@
     </div>
 
     <div>
-      <%= f.submit class: "button" %>
+      <%= f.submit class: "button green" %>
     </div>
     <% end %>
   </div>

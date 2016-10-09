@@ -1,3 +1,29 @@
 .bar-tap-number {
   font-family: fantasy;
 }
+
+.bar-taps-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.bar-tap-container {
+  display: flex;
+  flex-direction: column;
+  margin-right: 30px;
+}
+
+.bar-tap-edit-container {
+  display: flex;
+}
+// same styles as #title-preview in taps.scss
+.bar-tap-title {
+  text-align: center;
+  font-size: 40px;
+}
+// same style as #description preview in taps.scss
+.bar-tap-description {
+  text-align: center;
+  font-size: 30px;
+}
