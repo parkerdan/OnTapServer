@@ -1,17 +1,16 @@
-
-  <h2>Creds</h2>
+  <h1 class="section-header">Creds</h1>
   <%= form_tag sessions_path do %>
-  <div class="form-group">
-    <%= label_tag :email, "Email Address"%>
-    <%= text_field_tag :email, "", class: "form-control" %>
+  <div class="margin-left">
+    <h2>Email Address</h2>
+    <%= text_field_tag :email, "", class: "text-input" %>
   </div>
-  <div class="form-group">
-    <%= label_tag :password, "Password",class:"catpants" %>
-    <%= password_field_tag :password, "", class: "form-control catpants-password" %>
+  <div class="margin-left">
+    <h2><%= label_tag :password, "Password",class:"catpants" %></h2>
+    <%= password_field_tag :password, "", class: "text-input catpants-password" %>
     <a href="https://rubygems.org/gems/catpants">Cat Pants Gem!</a>
     <br/>
   </div>
-  <div class="form-group">
-    <%= submit_tag "Sign In", class: "btn btn-primary" %>
+  <div class="margin-left">
+    <%= submit_tag "Sign In", class: "button green" %>
   </div>
   <% end %>

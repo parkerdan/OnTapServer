@@ -5,12 +5,12 @@
   <div class="margin-left">
     <p><%= link_to 'Update Bar Info', edit_bar_path(@bar), class: "button blue" %></p>
     <br>
-    <p><%= link_to 'Add Tap To Bar', new_bar_tap_path(@bar), class: "button green" %></p>
+    <p><%= link_to 'Add Card', new_bar_tap_path(@bar), class: "button green" %></p>
   </div>
 <% end %>
 <br>
 <% if @taps.count > 0 %>
-<h2>Taps</h2>
+<h2>Beer Cards</h2>
 <% end %>
 
 
@@ -20,7 +20,7 @@
 
     <div class="bar-tap-edit-container center-all">
       <% if user_signed_in? && @bar.user_id == current_user.id %>
-      <p><%= link_to 'Update Tap Info', edit_bar_tap_path(@bar,t), class: "small-button blue" %></p>
+      <p><%= link_to 'Update Card', edit_bar_tap_path(@bar,t), class: "small-button blue" %></p>
       <% end %>
     </div>
 

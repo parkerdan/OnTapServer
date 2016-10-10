@@ -2,7 +2,9 @@
 
   <div class="nav-header">
     <div class="nav-container">
-      <%= image_tag("24.png", size: "48x40", alt: "Logo", class:"clear-top") %>
+      <%= link_to root_path do %>
+        <%= image_tag("24.png", size: "48x40", alt: "Logo", class:"clear-top") %>
+      <% end %>
     </div>
     <% if user_signed_in? %>
       <div class="nav-container">

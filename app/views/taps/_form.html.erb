@@ -15,12 +15,12 @@
 
     <div class="color-pickers">
       <div class="color-picker center-all">
-        <h4>Beer Color <small>(  will be card background color  )</small></h4>
+        <h4>Background Color</h4>
         <%= f.text_field :color, id: "beer-color", data: {color: @tap.color} %>
       </div>
 
       <div class="color-picker center-all">
-        <h4>Text Color <small>(  make it look pretty 😉  )</small></h4>
+        <h4>Text Color</h4>
         <div id="selected-text"></div>
         <%= f.text_field :text_color, id: "text-color", data: {textColor: @tap.text_color} %>
       </div>
@@ -58,12 +58,13 @@
     </div>
 
     <div>
-      <%= f.submit class: "button green" %>
+      <%= f.submit "Save",class: "button green" %>
     </div>
     <% end %>
   </div>
 
   <div class="tap-preview">
+    <h1>Card Preview</h1>
     <div class="preview-card" id="selected-color">
 
       <div class="card-title center-all">

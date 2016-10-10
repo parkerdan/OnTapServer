@@ -35,7 +35,7 @@ class TapsController < ApplicationController
 
     respond_to do |format|
       if @tap.save
-        format.html { redirect_to bar_path(@bar), notice: 'Tap was successfully created.' }
+        format.html { redirect_to bar_path(@bar), notice: 'Card was successfully created.' }
       else
         format.html { render :new }
       end
@@ -49,7 +49,7 @@ class TapsController < ApplicationController
 
     respond_to do |format|
       if @tap.update(tap_params)
-        format.html { redirect_to bar_path(@bar), notice: 'Tap was successfully updated.' }
+        format.html { redirect_to bar_path(@bar), notice: 'Card was successfully updated.' }
       else
         format.html { render :edit }
       end
@@ -63,7 +63,7 @@ class TapsController < ApplicationController
 
     @tap.destroy
     respond_to do |format|
-      format.html { redirect_to bar_path(@bar), notice: 'Tap was successfully destroyed.' }
+      format.html { redirect_to bar_path(@bar), notice: 'Card was successfully destroyed.' }
     end
   end
 

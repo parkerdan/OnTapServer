@@ -1,15 +1,28 @@
 <%= simple_form_for(@user) do |f| %>
-  <%= f.error_notification %>
+  <% if @user.errors.any? %>
+  <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+  <% end %>
 
-  <div class="form-inputs">
-    <%= f.input :email %>
-    <%= f.input :password, label_html: { class: 'catpants' }, input_html: {class:'catpants-password'} %>
-    <%= f.input :password_confirmation, label_html: { class: 'catpants' }, input_html: {class:'catpants-password'} %>
+
+  <div class="margin-left">
+    <h2>Email</h2>
+    <%= f.text_field :email, class: "text-input" %>
+
+    <h2><%= label_tag :password, "Password",class:"catpants" %></h2>
+    <%= f.password_field :password, class: "text-input catpants-password" %>
+
+    <h2><%= label_tag :password_confirmation, "Password Confirmation",class:"catpants" %></h2>
+    <%= f.password_field :password_confirmation, class: "text-input catpants-password" %>
+
     <a href="https://rubygems.org/gems/catpants">Cat Pants Gem!</a>
     <br/>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="margin-left">
+    <%= f.button :submit, class: "button green" %>
   </div>
 <% end %>
