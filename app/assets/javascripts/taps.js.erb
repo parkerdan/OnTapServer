@@ -79,14 +79,6 @@ document.addEventListener(listener, function(){
       var hopDefault = hoppiness;
     };
 
-    var imageId = ($('#tap-model-hop-val').data().selectedimage);
-    if (imageId === null) {
-      var defaultImage = 0;
-    } else {
-      var defaultImage = imageId;
-    };
-    $("#option-" + defaultImage).prop("checked", true);
-    $("#selected-image").attr({ src: "/assets/" + defaultImage + ".png" });
 
 
 
@@ -122,6 +114,22 @@ document.addEventListener(listener, function(){
     slide({},{value:hopDefault});
 
     var images = $(".option-container");
+
+    var imageId = ($('#tap-model-hop-val').data().selectedimage);
+    if (imageId === null) {
+      var defaultImage = 0;
+    } else {
+      var defaultImage = imageId;
+    };
+    $("#option-" + defaultImage).prop("checked", true);
+
+    var inputDefault = images[defaultImage];
+    var defaultSrc = $(inputDefault).find('img').attr('src');
+    $("#selected-image").attr({ src: defaultSrc });
+
+
+
+
 
     for (var i = 0; i < images.length; i++) {
       addOnClick(images[i],i)
