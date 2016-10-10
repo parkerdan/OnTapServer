@@ -11,8 +11,9 @@ function changeText(value){
 
 function addOnClick(element, i){
   element.addEventListener('click', function () {
+    var src = $(this).find("img").attr("src");
+    $("#selected-image").attr({ src: src });
     $("#option-" + i).prop("checked", true);
-    $("#selected-image").attr({ src: "/assets/" + i + ".png" });
   });
 };
 
