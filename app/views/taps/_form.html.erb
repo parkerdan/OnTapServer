@@ -32,7 +32,7 @@
     <div>
       <h2>Hoppiness <small>( ..move slider.. )</small></h2>
       <div id="hoppiness-value"></div>
-      <%= f.hidden_field :hoppiness, id: "tap-model-hop-val", data: {hoppiness: @tap.hoppiness,selectedimage:@tap.imageId} %>
+      <%= f.hidden_field :hoppiness, id: "tap-model-hop-val", data: {hoppiness: @tap.hoppiness,selectedimage:@tap.image_id} %>
     </div>
 
 
@@ -45,7 +45,7 @@
         <% while i < 30 do %>
         <div class="option-container center-all" data-image_id="<%= i %>">
           <div class="radio-button">
-            <%= f.radio_button(:imageId, i, class: "margin-horizontal", id:"option-#{i}") %>
+            <%= f.radio_button(:image_id, i, class: "margin-horizontal", id:"option-#{i}") %>
           </div>
           <label for="option-<%= i %>">
             <%= image_tag "#{i}.png" %>

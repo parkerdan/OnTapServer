@@ -16,6 +16,18 @@
  *= require jquery-ui/slider
  */
 
+ @media (min-width: 950px) {
+  #screen-warning {
+    display: none;
+  }
+}
+
+@media (max-width: 950px) {
+ #my-content {
+   display: none;
+ }
+}
+
 body {
   margin: 0;
 }

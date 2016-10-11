@@ -5,7 +5,7 @@
   <div class="margin-left">
     <p><%= link_to 'Update Bar Info', edit_bar_path(@bar), class: "button blue" %></p>
     <br>
-    <p><%= link_to 'Add Card', new_bar_tap_path(@bar), class: "button green" %></p>
+    <p><%= link_to 'Add Tap Card', new_bar_tap_path(@bar), class: "button green" %></p>
   </div>
 <% end %>
 <br>
@@ -20,7 +20,7 @@
 
     <div class="bar-tap-edit-container center-all">
       <% if user_signed_in? && @bar.user_id == current_user.id %>
-      <p><%= link_to 'Update Card', edit_bar_tap_path(@bar,t), class: "small-button blue" %></p>
+      <p><%= link_to 'Edit Card', edit_bar_tap_path(@bar,t), class: "small-button blue" %></p>
       <% end %>
     </div>
 
@@ -37,7 +37,7 @@
       </div>
 
       <div class="card-picture center-all">
-        <%= image_tag "#{t.imageId}.png"%>
+        <%= image_tag "#{t.image_id}.png"%>
       </div>
 
       <div class="card-description center-all">

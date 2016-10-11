@@ -3,13 +3,13 @@
   height: 50px;
   display: flex;
   flex-direction: row;
-  padding-right: 15px;
+  padding: 0px 20px;
 }
 
 .nav-container {
   display: flex;
   align-items: center;
-  margin-left: 15px;
+  padding: 0px 10px;
 }
 
 .nav-header {
@@ -21,7 +21,7 @@
 
 .nav-body {
   display: flex;
-  flex: 5;
+  flex: 3;
   flex-direction: row;
   justify-content: flex-end;
 }

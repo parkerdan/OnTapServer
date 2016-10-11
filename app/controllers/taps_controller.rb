@@ -75,6 +75,6 @@ class TapsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tap_params
-      params.require(:tap).permit(:title, :description, :imageId, :tapNumber, :bar_id, :color, :hoppiness, :text_color)
+      params.require(:tap).permit(:title, :description, :image_id, :bar_id, :color, :hoppiness, :text_color)
     end
 end
