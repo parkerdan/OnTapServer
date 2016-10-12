@@ -17,6 +17,9 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'bars#index'
 
+  get "/api/bars" => "api#get_bars", as: :get_bars
+  get "/api/cards" => "api#get_cards", as: :get_cards
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
