@@ -15,7 +15,9 @@ Rails.application.routes.draw do
   end
 
   # You can have the root of your site routed with "root"
-  root 'bars#index'
+  root 'bars#landing'
+
+  get 'landing' => 'bars#landing'
 
   get "/api/bars" => "api#get_bars", as: :get_bars
   get "/api/cards" => "api#get_cards", as: :get_cards

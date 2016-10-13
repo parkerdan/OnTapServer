@@ -1,13 +1,15 @@
-<h1 class="section-header">Registered Bars</h1>
+<div class="page-container">
+  <h1 class="section-header">Registered Bars</h1>
 
-<div class="margin-left">
-  <ul>
-    <% @bars.each do |bar| %>
-        <li><h2><%= link_to bar.title, bar %></h2>
-          <div class="margin-little-left">
-            <p class="bar-tap-number"><%= Tap.where(bar_id:bar.id).count %> Brew Cards<p>
+  <div class="margin-left">
+    <ul>
+      <% @bars.each do |bar| %>
+      <li><h2><%= link_to bar.title, bar %></h2>
+        <div class="margin-little-left">
+          <p class="bar-tap-number"><%= Tap.where(bar_id:bar.id).count %> Brew Cards<p>
           </div>
         </li>
-    <% end %>
-  </ul>
-</div>
+        <% end %>
+      </ul>
+    </div>
+</div>  

@@ -1,0 +1,72 @@
+.landing-container {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  background-image: url(asset-path('background.jpg'))
+}
+
+.landing-section {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+}
+
+.download-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 400px;
+  margin-bottom: 10px;
+}
+
+#download-links-header {
+  margin-bottom: 0px;
+}
+
+.steps {
+  color: white;
+  font-size: 50px;
+  font-weight: bold;
+  font-family: fantasy;
+  margin: 10px 0px 0px 0px;
+  text-shadow: 1px 1px #ff0000;
+
+}
+
+.link-button {
+  height: 50px;
+}
+
+.landing-section-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 0px 20px 0px;
+}
+
+.landing-header-text {
+  color: white;
+  font-size: 50px;
+  text-shadow: 2px 2px #ff0000;
+  margin-top: 0px;
+  text-align: center;
+}
+
+#get-started {
+  height: 50px;
+  width: 300px;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: green;
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#get-started-text {
+  color: white;
+}

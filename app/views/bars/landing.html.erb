@@ -1,0 +1,37 @@
+<div class="landing-container">
+  <div class="landing-section">
+    <div class="landing-section-header">
+      <p class="steps">Step One</p>
+      <h1 class="landing-header-text">Design Cards Here</h1>
+    </div>
+    <%= image_tag "brewcardsweb.gif" %>
+
+    <%= link_to bars_path do %>
+      <div id="get-started"><h2 id="get-started-text">Get Started</h2></div>
+    <% end %>
+    <p class="steps">Step Three Profit??</p>
+
+  </div>
+
+  <div class="landing-section">
+    <div class="landing-section-header">
+      <p class="steps">Step Two</p>
+      <h1 id="download-links-header" class="landing-header-text">Download The App Here</h1>
+    </div>
+
+
+    <div class="download-links">
+      <%= link_to "https://itunes.apple.com/us/app/brewcards/id1159993912?ls=1&mt=8" do %>
+        <%= image_tag "iTunes.svg", class: "link-button" %>
+      <% end %>
+      <%= link_to "https://play.google.com/store/apps/details?id=com.ontap" do %>
+        <%= image_tag "googleplay.svg", class: "link-button" %>
+      <% end %>
+
+    </div>
+
+    <div>
+      <%= image_tag "brewcardsapp.gif" %>
+    </div>
+  </div>
+</div>
