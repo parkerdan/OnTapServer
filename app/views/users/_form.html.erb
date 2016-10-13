@@ -2,27 +2,32 @@
   <% if @user.errors.any? %>
   <ul>
     <% @user.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
+      <li class="white-text"><%= msg %></li>
     <% end %>
   </ul>
   <% end %>
 
 
   <div class="margin-left">
-    <h2>Email</h2>
+    <h2 class="white-text">Email</h2>
     <%= f.text_field :email, class: "text-input" %>
 
-    <h2><%= label_tag :password, "Password",class:"catpants" %></h2>
+    <h2 class="white-text"><%= label_tag :password, "Password",class:"catpants" %></h2>
     <%= f.password_field :password, class: "text-input catpants-password" %>
 
-    <h2><%= label_tag :password_confirmation, "Password Confirmation",class:"catpants" %></h2>
-    <%= f.password_field :password_confirmation, class: "text-input catpants-password" %>
+    <h2 class="white-text"><%= label_tag :password_confirmation, "Password Confirmation",class:"catpants" %></h2>
 
-    <a href="https://rubygems.org/gems/catpants">Cat Pants Gem!</a>
+    <div class="cat-pants-button-container">
+      <%= f.password_field :password_confirmation, class: "text-input catpants-password" %>
+
+      <%= link_to "https://rubygems.org/gems/catpants" do %>
+      <p class="cat-pants-button">Cat Pants Gem</p>
+      <% end %>
+    </div>
     <br/>
   </div>
 
   <div class="margin-left">
-    <%= f.button :submit, class: "button green" %>
+    <%= f.button :submit, "Create", class: "button green" %>
   </div>
 <% end %>

@@ -28,3 +28,13 @@
   text-align: center;
   font-size: 30px;
 }
+
+.bar-image {
+  background-image: url(asset-path('bar.jpg'));
+  height: 1000px;
+}
+
+.beer-image {
+  background-image: url(asset-path('beerglass.jpg'));
+  height: 1000px;
+}

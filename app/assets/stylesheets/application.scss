@@ -29,7 +29,7 @@
 }
 
 body {
-  margin: 0;
+  margin: 0px;
 }
 
 a {
@@ -57,6 +57,10 @@ a:hover {
   background-color: blue;
 }
 
+.white-text {
+  color: white;
+}
+
 .button {
   padding: 15px;
   border-radius: 10px;
@@ -73,10 +77,10 @@ a:hover {
 
 
 .text-input {
-  height: 50px;
-  width: 500px;
+  height: 20px;
+  width: 300px;
   padding: 10px;
-  font-size: 35px;
+  font-size: 20px;
   margin-bottom: 20px;
 }
 
@@ -89,12 +93,18 @@ a:hover {
 }
 
 .section-header {
-  margin-bottom: 50px;
+  margin: 0px;
+  padding: 10px 0px 20px 0px;
   font-size: 35px;
+  color: white;
 }
 
 .margin-left {
   margin-left: 50px;
+}
+
+.margin-top {
+  margin-top: 10px;
 }
 
 .margin-little-left {
@@ -123,4 +133,17 @@ a:hover {
 
 .red-opacity {
   background-color: rgba(255, 0, 0, .5);
+}
+
+.cat-pants-button {
+  margin: 0px 10px;
+  background-color: red;
+  border-radius: 5px;
+  padding: 10px;
+  color: white;
+}
+
+.cat-pants-button-container {
+  display: flex;
+  flex-direction: row;
 }

@@ -1,52 +1,54 @@
-<div class="page-container">
-  <h1 class="section-header"><%= @bar.title %> </h1>
-
-
-  <% if user_signed_in? && @bar.user_id == current_user.id %>
+<div class="beer-image">
   <div class="margin-left">
-    <p><%= link_to 'Update Bar Info', edit_bar_path(@bar), class: "button blue" %></p>
+    <h1 class="section-header"><%= @bar.title %> </h1>
+
+
+    <% if user_signed_in? && @bar.user_id == current_user.id %>
+    <div class="margin-left">
+      <p><%= link_to 'Update Bar Info', edit_bar_path(@bar), class: "button blue" %></p>
+      <br>
+      <p><%= link_to 'Add Brew Card', new_bar_tap_path(@bar), class: "button green" %></p>
+    </div>
+    <% end %>
     <br>
-    <p><%= link_to 'Add Brew Card', new_bar_tap_path(@bar), class: "button green" %></p>
-  </div>
-  <% end %>
-  <br>
-  <% if @taps.count > 0 %>
-  <h2>Brew Cards</h2>
-  <% end %>
+    <% if @taps.count > 0 %>
+    <h2>Brew Cards</h2>
+    <% end %>
+    
 
+    <div class="bar-taps-container">
+      <% @taps.each do |t| %>
+      <div class="bar-tap-container">
 
-  <div class="bar-taps-container">
-    <% @taps.each do |t| %>
-    <div class="bar-tap-container">
-
-      <div class="bar-tap-edit-container center-all">
-        <% if user_signed_in? && @bar.user_id == current_user.id %>
-        <p><%= link_to 'Edit Card', edit_bar_tap_path(@bar,t), class: "small-button blue" %></p>
-        <% end %>
-      </div>
-
-      <div class="preview-card" style="background-color:<%= t.color %>">
-
-        <div class="card-title center-all" >
-          <h1 class="bar-tap-title" style="color:<%= t.text_color %>"><%= t.title %></h1>
-        </div>
-
-        <div class="card-hops center-all">
-          <% t.hoppiness.times do |i| %>
-          <%= image_tag "hops.png", class: "card-hop-pic"%>
+        <div class="bar-tap-edit-container center-all">
+          <% if user_signed_in? && @bar.user_id == current_user.id %>
+          <p><%= link_to 'Edit Card', edit_bar_tap_path(@bar,t), class: "small-button blue" %></p>
           <% end %>
         </div>
 
-        <div class="card-picture center-all">
-          <%= image_tag "#{t.image_id}.png"%>
-        </div>
+        <div class="preview-card" style="background-color:<%= t.color %>">
 
-        <div class="card-description center-all">
-          <p class="bar-tap-description" style="color:<%= t.text_color %>"><%= t.description %></p>
-        </div>
+          <div class="card-title center-all" >
+            <h1 class="bar-tap-title" style="color:<%= t.text_color %>"><%= t.title %></h1>
+          </div>
 
+          <div class="card-hops center-all">
+            <% t.hoppiness.times do |i| %>
+            <%= image_tag "hops.png", class: "card-hop-pic"%>
+            <% end %>
+          </div>
+
+          <div class="card-picture center-all">
+            <%= image_tag "#{t.image_id}.png"%>
+          </div>
+
+          <div class="card-description center-all">
+            <p class="bar-tap-description" style="color:<%= t.text_color %>"><%= t.description %></p>
+          </div>
+
+        </div>
       </div>
+      <% end %>
     </div>
-    <% end %>
   </div>
-</div>  
+</div>

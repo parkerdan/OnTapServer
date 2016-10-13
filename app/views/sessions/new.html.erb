@@ -1,18 +1,22 @@
-<div class="page-container">
-  <h1 class="section-header">Creds</h1>
-  <%= form_tag sessions_path do %>
+<div class="bar-image">
   <div class="margin-left">
-    <h2>Email Address</h2>
-    <%= text_field_tag :email, "", class: "text-input" %>
+    <h1 class="section-header">Login</h1>
+    <div class="margin-left">
+      <%= form_tag sessions_path do %>
+      <h2 class="white-text">Email Address</h2>
+      <%= text_field_tag :email, "", class: "text-input" %>
+      <h2 class="white-text"><%= label_tag :password, "Password",class:"catpants" %></h2>
+
+      <div class="cat-pants-button-container">
+        <%= password_field_tag :password, "", class: "text-input catpants-password" %>
+
+        <%= link_to "https://rubygems.org/gems/catpants" do %>
+          <p class="cat-pants-button">Cat Pants Gem</p>
+        <% end %>
+      </div>
+      <br/>
+      <%= submit_tag "Sign In", class: "button green" %>
+      <% end %>
+    </div>
   </div>
-  <div class="margin-left">
-    <h2><%= label_tag :password, "Password",class:"catpants" %></h2>
-    <%= password_field_tag :password, "", class: "text-input catpants-password" %>
-    <a href="https://rubygems.org/gems/catpants">Cat Pants Gem!</a>
-    <br/>
-  </div>
-  <div class="margin-left">
-    <%= submit_tag "Sign In", class: "button green" %>
-  </div>
-  <% end %>
-</div>  
+</div>

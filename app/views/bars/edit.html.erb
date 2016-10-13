@@ -1,9 +1,14 @@
-<div class="page-container">
-  <h1>Editing Bar</h1>
+<div class="beer-image">
+  <div class="margin-left">
+    <h1 class="section-header">Editing Bar</h1>
 
-  <%= render 'form' %>
+    <%= render 'form' %>
+    <br/>
+    <div class="margin-left">
+      <p>
+        <%= link_to 'Destroy', @bar, method: :delete, data: { confirm: 'Really???' }, class: "button red" %>
+      </p>
+    </div>
+  </div>
 
-  <p>
-    <%= link_to 'Destroy', @bar, method: :delete, data: { confirm: 'Really???' }, class: "button red" %>
-  </p>
-</div>  
+</div>
