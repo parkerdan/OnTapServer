@@ -5,8 +5,20 @@ class Bar < ActiveRecord::Base
 
   def self.get_bars
     reply = []
-    Bar.all.each do |b|
-      reply << { :title => b.title,:id => b.id, :cardCount => Tap.where(bar_id: b.id).count }
+    Bar.order(:title).each do |b|
+      # dev settings for non-filtered
+      # tap_count = Tap.where("bar_id = ?", b.id).count
+      #
+      #   reply << { :title => b.title,:id => b.id, :cardCount => tap_count }
+      #
+
+
+      tap_count = Tap.where("bar_id = ? AND show_card = ?", b.id,true).count
+      if tap_count > 0
+        reply << { :title => b.title,:id => b.id, :cardCount => tap_count }
+      end
+
+      
     end
     return reply
   end
