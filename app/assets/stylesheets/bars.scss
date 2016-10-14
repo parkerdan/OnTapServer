@@ -31,13 +31,13 @@
 }
 
 .bar-image {
-  background-image: url(asset-path('background.jpg'));
+  background-image: image-url('background.jpg');
   background-repeat: repeat-y;
   min-height: 1000px;
 }
 
 .beer-image {
-  background-image: url(asset-path('beerglass.jpg'));
+  background-image: image-url('beerglass.jpg');
   background-repeat: repeat-y;
   min-height: 1000px;
 }
