@@ -21,30 +21,31 @@
 /* line 18, /Users/danparker/OnTapServer/app/assets/stylesheets/bars.scss */
 .bar-tap-edit-container {
   display: flex;
+  justify-content: space-around;
 }
 
-/* line 22, /Users/danparker/OnTapServer/app/assets/stylesheets/bars.scss */
+/* line 23, /Users/danparker/OnTapServer/app/assets/stylesheets/bars.scss */
 .bar-tap-title {
   text-align: center;
   font-size: 40px;
 }
 
-/* line 27, /Users/danparker/OnTapServer/app/assets/stylesheets/bars.scss */
+/* line 28, /Users/danparker/OnTapServer/app/assets/stylesheets/bars.scss */
 .bar-tap-description {
   text-align: center;
   font-size: 30px;
 }
 
-/* line 32, /Users/danparker/OnTapServer/app/assets/stylesheets/bars.scss */
+/* line 33, /Users/danparker/OnTapServer/app/assets/stylesheets/bars.scss */
 .bar-image {
-  background-image: url("/background.jpg");
+  background-image: url(/assets/background-6a0a39f9012f229ac01842d318b6dae2d4ecf06d77abbc8698fd2cfe3824f6c4.jpg);
   background-repeat: repeat-y;
   min-height: 1000px;
 }
 
-/* line 38, /Users/danparker/OnTapServer/app/assets/stylesheets/bars.scss */
+/* line 39, /Users/danparker/OnTapServer/app/assets/stylesheets/bars.scss */
 .beer-image {
-  background-image: url("/beerglass.jpg");
+  background-image: url(/assets/beerglass-2115e86d1b4f5698e834ab807c73ecf3590ea3fe0c1506c7159f8ea3af38c79d.jpg);
   background-repeat: repeat-y;
   min-height: 1000px;
 }
@@ -53,7 +54,7 @@
   display: flex;
   flex: 1;
   flex-direction: row;
-  background-image: url("/bar.jpg");
+  background-image: url(/assets/bar-d0a75a43d2232d9acbf6ae8c8bb6d8eed0039ab9aad4c2de80c142ef78e8755d.jpg);
   background-repeat: repeat-y;
   min-height: 1000px;
 }
@@ -208,7 +209,18 @@
   margin-right: 10px;
 }
 
-/* line 42, /Users/danparker/OnTapServer/app/assets/stylesheets/taps.scss */
+/* line 40, /Users/danparker/OnTapServer/app/assets/stylesheets/taps.scss */
+.checkbox {
+  font-size: 20px;
+}
+
+/* line 44, /Users/danparker/OnTapServer/app/assets/stylesheets/taps.scss */
+#recipe {
+  height: 150px;
+  width: 60%;
+}
+
+/* line 51, /Users/danparker/OnTapServer/app/assets/stylesheets/taps.scss */
 .tap-preview {
   position: fixed;
   right: 40px;
@@ -217,7 +229,7 @@
   height: 500px;
 }
 
-/* line 50, /Users/danparker/OnTapServer/app/assets/stylesheets/taps.scss */
+/* line 59, /Users/danparker/OnTapServer/app/assets/stylesheets/taps.scss */
 .preview-card {
   height: 500px;
   width: 310px;
@@ -227,7 +239,7 @@
   flex-direction: column;
 }
 
-/* line 59, /Users/danparker/OnTapServer/app/assets/stylesheets/taps.scss */
+/* line 68, /Users/danparker/OnTapServer/app/assets/stylesheets/taps.scss */
 .card-title {
   display: flex;
   flex: 1;
@@ -235,13 +247,13 @@
   overflow: hidden;
 }
 
-/* line 66, /Users/danparker/OnTapServer/app/assets/stylesheets/taps.scss */
+/* line 75, /Users/danparker/OnTapServer/app/assets/stylesheets/taps.scss */
 #title-preview {
   text-align: center;
   font-size: 40px;
 }
 
-/* line 71, /Users/danparker/OnTapServer/app/assets/stylesheets/taps.scss */
+/* line 80, /Users/danparker/OnTapServer/app/assets/stylesheets/taps.scss */
 .card-hops {
   display: flex;
   flex: .5;
@@ -250,19 +262,19 @@
   padding: 0px 5px;
 }
 
-/* line 79, /Users/danparker/OnTapServer/app/assets/stylesheets/taps.scss */
+/* line 88, /Users/danparker/OnTapServer/app/assets/stylesheets/taps.scss */
 .card-hop-pic {
   width: 30px;
   height: 30px;
 }
 
-/* line 84, /Users/danparker/OnTapServer/app/assets/stylesheets/taps.scss */
+/* line 93, /Users/danparker/OnTapServer/app/assets/stylesheets/taps.scss */
 .card-picture {
   display: flex;
   flex: 1;
 }
 
-/* line 89, /Users/danparker/OnTapServer/app/assets/stylesheets/taps.scss */
+/* line 98, /Users/danparker/OnTapServer/app/assets/stylesheets/taps.scss */
 .card-description {
   display: flex;
   flex: 1.5;
@@ -270,7 +282,7 @@
   overflow: hidden;
 }
 
-/* line 96, /Users/danparker/OnTapServer/app/assets/stylesheets/taps.scss */
+/* line 105, /Users/danparker/OnTapServer/app/assets/stylesheets/taps.scss */
 #description-preview {
   text-align: center;
   font-size: 30px;
@@ -346,11 +358,21 @@ a:hover {
 }
 
 /* line 65, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+.green-text {
+  color: green;
+}
+
+/* line 69, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+.red-text {
+  color: red;
+}
+
+/* line 73, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .black-shadow {
   text-shadow: 2px 2px black;
 }
 
-/* line 69, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 77, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .button {
   padding: 15px;
   border-radius: 10px;
@@ -358,7 +380,7 @@ a:hover {
   font-size: 20px;
 }
 
-/* line 76, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 84, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .small-button {
   padding: 5px;
   border-radius: 10px;
@@ -366,7 +388,7 @@ a:hover {
   font-size: 15px;
 }
 
-/* line 84, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 92, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .text-input {
   height: 20px;
   width: 300px;
@@ -375,7 +397,7 @@ a:hover {
   margin-bottom: 20px;
 }
 
-/* line 92, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 100, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .text-field {
   height: 100px;
   width: 500px;
@@ -384,7 +406,7 @@ a:hover {
   margin-bottom: 20px;
 }
 
-/* line 100, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 108, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .section-header {
   margin: 0px;
   padding: 10px 0px 20px 0px;
@@ -392,33 +414,33 @@ a:hover {
   color: white;
 }
 
-/* line 107, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 115, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .margin-left {
   margin-left: 50px;
 }
 
-/* line 111, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 119, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .margin-top {
   margin-top: 10px;
 }
 
-/* line 115, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 123, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .margin-little-left {
   margin-left: 20px;
 }
 
-/* line 119, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 127, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .center-all {
   align-items: center;
   justify-content: center;
 }
 
-/* line 124, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 132, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .padding {
   padding: 5px;
 }
 
-/* line 128, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 136, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .alert {
   display: flex;
   flex-direction: row;
@@ -426,17 +448,17 @@ a:hover {
   height: 60px;
 }
 
-/* line 135, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 143, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .green-opacity {
   background-color: rgba(0, 255, 0, 0.5);
 }
 
-/* line 139, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 147, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .red-opacity {
   background-color: rgba(255, 0, 0, 0.5);
 }
 
-/* line 143, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 151, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .cat-pants-button {
   margin: 0px 10px;
   background-color: red;
@@ -445,7 +467,7 @@ a:hover {
   color: white;
 }
 
-/* line 151, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 159, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .cat-pants-button-container {
   display: flex;
   flex-direction: row;
