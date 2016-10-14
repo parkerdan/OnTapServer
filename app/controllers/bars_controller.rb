@@ -16,10 +16,10 @@ class BarsController < ApplicationController
   def show
     # @taps = Tap.where(bar_id: @bar.id)
     if user_signed_in? && @bar.user_id == current_user.id
-      @taps = Tap.where("bar_id = ?", @bar.id)
+      @taps = Tap.where("bar_id = ?", @bar.id).order(:created_at)
     else
       # @tap = Tap.find(params[:id])
-      @taps = Tap.where("bar_id = ? AND show_card = ?", @bar.id, true)
+      @taps = Tap.where("bar_id = ? AND show_card = ?", @bar.id, true).order(:created_at)
     end
 
   end
