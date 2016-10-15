@@ -4,7 +4,7 @@ class BarsController < ApplicationController
   # GET /bars
   # GET /bars.json
   def index
-    @bars = Bar.all
+    @bars = Bar.all.order(:title).page(params[:page]).per(16)
   end
 
   def landing

@@ -1,17 +1,20 @@
 <div class="beer-image">
   <div class="margin-left">
-    <h1 class="section-header">Registered Accounts</h1>
+    <h1 class="bar-title">Registered Accounts</h1>
   </div>
 
   <div class="margin-left">
-    <ul>
-      <% @bars.each do |bar| %>
-      <li class="white-text"><h2 class="white-text"><%= link_to bar.title, bar %></h2>
-        <div class="margin-little-left">
-          <p class="bar-tap-number"><%= Tap.where("bar_id = ? AND show_card = ?",bar.id,true).count %> Public Brew Cards<p>
-          </div>
-        </li>
+    <div class="bars-columns">
+        <% @bars.each do |bar| %>
+          <%= link_to bar, class: "bar-list-container grey-text" do %>
+          <div>
+            <h2><%= bar.title %></h2>
+              <p class="bar-tap-number"><%= Tap.where("bar_id = ? AND show_card = ?",bar.id,true).count %> Public Brew Cards<p>
+              <p class="bar-tap-number"><%= Tap.where("bar_id = ? AND show_recipe = ? AND length(recipe) > ?",bar.id,true,0).count %> Public Recipes<p>
+            </div>
+          <% end %>
         <% end %>
-      </ul>
+      </div>
     </div>
+    <%= paginate @bars %>
 </div>

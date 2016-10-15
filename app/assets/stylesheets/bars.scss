@@ -13,6 +13,9 @@
   flex-direction: column;
   margin-right: 30px;
   margin-bottom: 30px;
+  padding: 20px;
+  background-color: rgba(255,255,255,.1);
+  border-radius: 10px;
 }
 
 .bar-tap-edit-container {
@@ -40,4 +43,33 @@
   background-image: image-url('beerglass.jpg');
   background-repeat: repeat-y;
   min-height: 1000px;
+}
+
+.bars-columns {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.bar-list-container {
+  width: 48%;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid rgba(152,152,152,.3);
+  text-align: center;
+}
+
+.bar-title {
+  color: #ffcc00;
+  margin: 0px;
+  padding: 10px 0px 20px 0px;
+}
+
+.bar-title-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }

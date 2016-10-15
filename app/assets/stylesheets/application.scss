@@ -43,6 +43,7 @@ a:hover {
 
 .page-container {
   padding: 20px 40px;
+  background-color: rgba(152,152,152,.2)
 }
 
 .green {
@@ -61,6 +62,10 @@ a:hover {
   color: white;
 }
 
+.grey-text {
+  color: grey;
+}
+
 .green-text {
   color: green;
 }
@@ -74,15 +79,15 @@ a:hover {
 }
 
 .button {
-  padding: 15px;
+  padding: 10px;
   border-radius: 10px;
   color: white;
   font-size: 20px;
 }
 
 .small-button {
-  padding: 5px;
-  border-radius: 10px;
+  padding: 10px;
+  border-radius: 5px;
   color: white;
   font-size: 15px;
 }
@@ -158,4 +163,18 @@ a:hover {
 .cat-pants-button-container {
   display: flex;
   flex-direction: row;
+}
+
+.paginator-container {
+  padding: 20px;
+}
+
+.padding {
+  padding: 5px;
+}
+
+.current {
+  background-color: white;
+  border-radius: 5px;
+  color:black;
 }
