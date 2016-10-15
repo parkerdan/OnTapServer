@@ -56,8 +56,9 @@
       </div>
     </div>
 
-      <%= f.input :show_card, label: "Show Card?", as: :boolean, class: "checkbox" %>
-      <p>(Show this card on the website AND the mobile app?)</p>
+      <%= f.input :show_card, label: "Public Card", as: :boolean, class: "checkbox" %>
+      <p>Show this card on the website AND the mobile app?</p>
+      <p>If unchecked this card and all it's information in visible to only YOU through this website</p>
 
 
     <h2>Recipe</h2>
@@ -67,7 +68,7 @@
 
 
       <%= f.input :show_recipe, label: "Show Recipe?", as: :boolean, class: "checkbox" %>
-      <p>Optionally share your recipe through the mobile app</p>
+      <p>Optionally share your recipe on Public cards through the web and mobile apps</p>
 
     <div>
       <%= f.submit "Save",class: "button green" %>

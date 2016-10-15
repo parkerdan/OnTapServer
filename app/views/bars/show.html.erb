@@ -35,7 +35,11 @@
         </div>
 
         <div class="preview-card" style="background-color:<%= t.color %>">
+          <% if t.show_recipe && t.recipe.length > 0 %>
 
+          <div class="ribbon" data-recipe="<%= t.recipe %>" ><a href="#recipe-modal"><span class="ribbon-text" >RECIPE</span></a></div>
+
+          <% end %>
           <div class="card-title center-all" >
             <h1 class="bar-tap-title" style="color:<%= t.text_color %>"><%= t.title %></h1>
           </div>
@@ -59,4 +63,18 @@
       <% end %>
     </div>
   </div>
+
+
+<!-- MODAL -->
+<div id="recipe-modal" class="modalDialog">
+    <div>	<a href="#close" title="Close" class="close">X</a>
+
+        	<h2>Recipe</h2>
+
+        <div id="recipe-modal-text"></div>
+    </div>
+</div>
+
+
+
 </div>
