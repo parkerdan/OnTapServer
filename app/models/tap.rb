@@ -5,7 +5,7 @@ class Tap < ActiveRecord::Base
 
   def self.get_cards(bar_id)
     reply = []
-    bar.find_by_id(bar_id)
+    bar = Bar.find_by_id(bar_id)
     bar.increment!(:requests)
     taps = Tap.where("bar_id = ? AND show_card = ?", bar_id, true)
 
