@@ -85,6 +85,124 @@
   flex-direction: row;
   align-items: center;
 }
+
+/* line 78, /Users/danparker/OnTapServer/app/assets/stylesheets/bars.scss */
+.ribbon {
+  position: absolute;
+  right: -5px;
+  top: -5px;
+  z-index: 1;
+  overflow: hidden;
+  width: 75px;
+  height: 75px;
+  text-align: right;
+}
+
+/* line 86, /Users/danparker/OnTapServer/app/assets/stylesheets/bars.scss */
+.ribbon span {
+  font-size: 10px;
+  font-weight: bold;
+  color: #FFF;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 20px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  width: 100px;
+  display: block;
+  background: linear-gradient(#9BC90D 0%, #79A70A 100%);
+  box-shadow: 0 3px 10px -5px black;
+  position: absolute;
+  top: 19px;
+  right: -21px;
+}
+
+/* line 102, /Users/danparker/OnTapServer/app/assets/stylesheets/bars.scss */
+.ribbon span::before {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 100%;
+  z-index: -1;
+  border-left: 3px solid #087F8F;
+  border-right: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid #087F8F;
+}
+
+/* line 111, /Users/danparker/OnTapServer/app/assets/stylesheets/bars.scss */
+.ribbon span::after {
+  content: "";
+  position: absolute;
+  right: 0px;
+  top: 100%;
+  z-index: -1;
+  border-left: 3px solid transparent;
+  border-right: 3px solid #087F8F;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid #087F8F;
+}
+
+/* line 122, /Users/danparker/OnTapServer/app/assets/stylesheets/bars.scss */
+.modalDialog {
+  position: fixed;
+  font-family: Arial, Helvetica, sans-serif;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 99999;
+  opacity: 0;
+  -webkit-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+  pointer-events: none;
+}
+
+/* line 137, /Users/danparker/OnTapServer/app/assets/stylesheets/bars.scss */
+.modalDialog:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* line 141, /Users/danparker/OnTapServer/app/assets/stylesheets/bars.scss */
+.modalDialog > div {
+  width: 400px;
+  position: relative;
+  margin: 10% auto;
+  padding: 5px 20px 13px 20px;
+  border-radius: 10px;
+  background: #fff;
+  background: -moz-linear-gradient(#fff, #999);
+  background: -webkit-linear-gradient(#fff, #999);
+  background: -o-linear-gradient(#fff, #999);
+}
+
+/* line 152, /Users/danparker/OnTapServer/app/assets/stylesheets/bars.scss */
+.close {
+  background: #606061;
+  color: #FFFFFF;
+  line-height: 25px;
+  position: absolute;
+  right: -12px;
+  text-align: center;
+  top: -10px;
+  width: 24px;
+  text-decoration: none;
+  font-weight: bold;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  border-radius: 12px;
+  -moz-box-shadow: 1px 1px 3px #000;
+  -webkit-box-shadow: 1px 1px 3px #000;
+  box-shadow: 1px 1px 3px #000;
+}
+
+/* line 170, /Users/danparker/OnTapServer/app/assets/stylesheets/bars.scss */
+.close:hover {
+  background: #00d9ff;
+}
 /* line 1, /Users/danparker/OnTapServer/app/assets/stylesheets/landing.scss */
 .landing-container {
   display: flex;
@@ -272,9 +390,10 @@
   border-radius: 10px;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
-/* line 68, /Users/danparker/OnTapServer/app/assets/stylesheets/taps.scss */
+/* line 69, /Users/danparker/OnTapServer/app/assets/stylesheets/taps.scss */
 .card-title {
   display: flex;
   flex: 1;
@@ -282,13 +401,13 @@
   overflow: hidden;
 }
 
-/* line 75, /Users/danparker/OnTapServer/app/assets/stylesheets/taps.scss */
+/* line 76, /Users/danparker/OnTapServer/app/assets/stylesheets/taps.scss */
 #title-preview {
   text-align: center;
   font-size: 40px;
 }
 
-/* line 80, /Users/danparker/OnTapServer/app/assets/stylesheets/taps.scss */
+/* line 81, /Users/danparker/OnTapServer/app/assets/stylesheets/taps.scss */
 .card-hops {
   display: flex;
   flex: .5;
@@ -297,19 +416,19 @@
   padding: 0px 5px;
 }
 
-/* line 88, /Users/danparker/OnTapServer/app/assets/stylesheets/taps.scss */
+/* line 89, /Users/danparker/OnTapServer/app/assets/stylesheets/taps.scss */
 .card-hop-pic {
   width: 30px;
   height: 30px;
 }
 
-/* line 93, /Users/danparker/OnTapServer/app/assets/stylesheets/taps.scss */
+/* line 94, /Users/danparker/OnTapServer/app/assets/stylesheets/taps.scss */
 .card-picture {
   display: flex;
   flex: 1;
 }
 
-/* line 98, /Users/danparker/OnTapServer/app/assets/stylesheets/taps.scss */
+/* line 99, /Users/danparker/OnTapServer/app/assets/stylesheets/taps.scss */
 .card-description {
   display: flex;
   flex: 1.5;
@@ -317,7 +436,7 @@
   overflow: hidden;
 }
 
-/* line 105, /Users/danparker/OnTapServer/app/assets/stylesheets/taps.scss */
+/* line 106, /Users/danparker/OnTapServer/app/assets/stylesheets/taps.scss */
 #description-preview {
   text-align: center;
   font-size: 30px;
