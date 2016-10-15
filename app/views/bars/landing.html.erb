@@ -6,9 +6,17 @@
     </div>
     <%= image_tag "brewcardsweb.gif" %>
 
-    <%= link_to new_user_path do %>
-      <div id="get-started"><h2 id="get-started-text">Get Started</h2></div>
-    <% end %>
+    <div class="bar-title-container">
+      <%= link_to new_user_path do %>
+        <div class="get-started green white-text"><h2>Get Started</h2></div>
+      <% end %>
+
+      <%= link_to bars_path do %>
+        <div class="get-started yellow"><h2 id="get-started-text">Browse Cards</h2></div>
+      <% end %>
+    </div>
+
+
     <p class="steps">Step Three Profit??</p>
 
   </div>
@@ -16,7 +24,7 @@
   <div class="landing-section">
     <div class="landing-section-header">
       <p class="steps">Step Two</p>
-      <h1 id="download-links-header" class="landing-header-text">Download The App Here</h1>
+      <h1 id="download-links-header">Tell Everyone To Download The App And Find Your Account</h1>
     </div>
 
 

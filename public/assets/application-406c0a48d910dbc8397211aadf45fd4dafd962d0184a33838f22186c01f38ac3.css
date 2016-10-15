@@ -116,9 +116,14 @@
 /* line 26, /Users/danparker/OnTapServer/app/assets/stylesheets/landing.scss */
 #download-links-header {
   margin-bottom: 0px;
+  color: white;
+  font-size: 35px;
+  text-shadow: 2px 2px #ff0000;
+  margin-top: 0px;
+  text-align: center;
 }
 
-/* line 30, /Users/danparker/OnTapServer/app/assets/stylesheets/landing.scss */
+/* line 36, /Users/danparker/OnTapServer/app/assets/stylesheets/landing.scss */
 .steps {
   color: white;
   font-size: 50px;
@@ -128,12 +133,12 @@
   text-shadow: 1px 1px #ff0000;
 }
 
-/* line 40, /Users/danparker/OnTapServer/app/assets/stylesheets/landing.scss */
+/* line 46, /Users/danparker/OnTapServer/app/assets/stylesheets/landing.scss */
 .link-button {
   height: 50px;
 }
 
-/* line 44, /Users/danparker/OnTapServer/app/assets/stylesheets/landing.scss */
+/* line 50, /Users/danparker/OnTapServer/app/assets/stylesheets/landing.scss */
 .landing-section-header {
   display: flex;
   flex-direction: column;
@@ -142,31 +147,25 @@
   padding: 0px 0px 20px 0px;
 }
 
-/* line 52, /Users/danparker/OnTapServer/app/assets/stylesheets/landing.scss */
+/* line 58, /Users/danparker/OnTapServer/app/assets/stylesheets/landing.scss */
 .landing-header-text {
   color: white;
-  font-size: 50px;
+  font-size: 35px;
   text-shadow: 2px 2px #ff0000;
   margin-top: 0px;
   text-align: center;
 }
 
-/* line 60, /Users/danparker/OnTapServer/app/assets/stylesheets/landing.scss */
-#get-started {
+/* line 66, /Users/danparker/OnTapServer/app/assets/stylesheets/landing.scss */
+.get-started {
   height: 50px;
-  width: 300px;
+  width: 200px;
   border-radius: 10px;
   padding: 10px;
-  background-color: green;
-  margin-top: 50px;
+  margin: 50px 15px 0px 15px;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-/* line 72, /Users/danparker/OnTapServer/app/assets/stylesheets/landing.scss */
-#get-started-text {
-  color: white;
 }
 /* line 1, /Users/danparker/OnTapServer/app/assets/stylesheets/navbar.scss */
 .my-nav {
@@ -390,31 +389,36 @@ a:hover {
 }
 
 /* line 62, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+.yellow {
+  background-color: #ffcc00;
+}
+
+/* line 66, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .white-text {
   color: white;
 }
 
-/* line 66, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 70, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .grey-text {
   color: grey;
 }
 
-/* line 70, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 74, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .green-text {
   color: green;
 }
 
-/* line 74, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 78, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .red-text {
   color: red;
 }
 
-/* line 78, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 82, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .black-shadow {
   text-shadow: 2px 2px black;
 }
 
-/* line 82, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 86, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .button {
   padding: 10px;
   border-radius: 10px;
@@ -422,7 +426,7 @@ a:hover {
   font-size: 20px;
 }
 
-/* line 89, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 93, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .small-button {
   padding: 10px;
   border-radius: 5px;
@@ -430,7 +434,7 @@ a:hover {
   font-size: 15px;
 }
 
-/* line 97, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 101, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .text-input {
   height: 20px;
   width: 300px;
@@ -439,7 +443,7 @@ a:hover {
   margin-bottom: 20px;
 }
 
-/* line 105, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 109, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .text-field {
   height: 100px;
   width: 500px;
@@ -448,7 +452,7 @@ a:hover {
   margin-bottom: 20px;
 }
 
-/* line 113, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 117, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .section-header {
   margin: 0px;
   padding: 10px 0px 20px 0px;
@@ -456,33 +460,33 @@ a:hover {
   color: white;
 }
 
-/* line 120, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 124, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .margin-left {
   margin-left: 50px;
 }
 
-/* line 124, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 128, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .margin-top {
   margin-top: 10px;
 }
 
-/* line 128, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 132, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .margin-little-left {
   margin-left: 20px;
 }
 
-/* line 132, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 136, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .center-all {
   align-items: center;
   justify-content: center;
 }
 
-/* line 137, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 141, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .padding {
   padding: 5px;
 }
 
-/* line 141, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 145, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .alert {
   display: flex;
   flex-direction: row;
@@ -490,17 +494,17 @@ a:hover {
   height: 60px;
 }
 
-/* line 148, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 152, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .green-opacity {
   background-color: rgba(0, 255, 0, 0.5);
 }
 
-/* line 152, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 156, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .red-opacity {
   background-color: rgba(255, 0, 0, 0.5);
 }
 
-/* line 156, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 160, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .cat-pants-button {
   margin: 0px 10px;
   background-color: red;
@@ -509,23 +513,23 @@ a:hover {
   color: white;
 }
 
-/* line 164, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 168, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .cat-pants-button-container {
   display: flex;
   flex-direction: row;
 }
 
-/* line 169, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 173, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .paginator-container {
   padding: 20px;
 }
 
-/* line 173, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 177, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .padding {
   padding: 5px;
 }
 
-/* line 177, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 181, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .current {
   background-color: white;
   border-radius: 5px;

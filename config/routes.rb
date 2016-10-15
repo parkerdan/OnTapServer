@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   root 'bars#landing'
 
   get 'landing' => 'bars#landing'
+  get 'recipe' => 'bars#recipe', as: :get_recipe
 
   get "/api/bars" => "api#get_bars", as: :get_bars
   get "/api/cards" => "api#get_cards", as: :get_cards

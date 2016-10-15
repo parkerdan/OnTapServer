@@ -25,6 +25,12 @@
 
 #download-links-header {
   margin-bottom: 0px;
+  color: white;
+  font-size: 35px;
+  text-shadow: 2px 2px #ff0000;
+  margin-top: 0px;
+  text-align: center;
+
 }
 
 .steps {
@@ -51,24 +57,19 @@
 
 .landing-header-text {
   color: white;
-  font-size: 50px;
+  font-size: 35px;
   text-shadow: 2px 2px #ff0000;
   margin-top: 0px;
   text-align: center;
 }
 
-#get-started {
+.get-started {
   height: 50px;
-  width: 300px;
+  width: 200px;
   border-radius: 10px;
   padding: 10px;
-  background-color: green;
-  margin-top: 50px;
+  margin: 50px 15px 0px 15px;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-#get-started-text {
-  color: white;
 }

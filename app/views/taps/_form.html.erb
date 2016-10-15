@@ -62,13 +62,12 @@
 
     <h2>Recipe</h2>
     <p>Store your recipe information here.</p>
-    <p>Optionally share your recipe through the website and mobile app</p>
     <%= f.text_area :recipe, id: "recipe" %>
 
 
 
       <%= f.input :show_recipe, label: "Show Recipe?", as: :boolean, class: "checkbox" %>
-      <p>(Show the recipe on the website AND the mobile app?)</p>
+      <p>Optionally share your recipe through the mobile app</p>
 
     <div>
       <%= f.submit "Save",class: "button green" %>
