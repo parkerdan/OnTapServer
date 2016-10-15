@@ -17,6 +17,10 @@
     <% if user_signed_in? %>
 
     <div class="nav-container">
+      <%= link_to "My Bar(s)", user_bars_path %>
+    </div>
+
+    <div class="nav-container">
       <%= link_to "Create Bar", new_bar_path %>
     </div>
 

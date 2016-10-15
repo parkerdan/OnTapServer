@@ -11,6 +11,10 @@ class BarsController < ApplicationController
 
   end
 
+  def user_bars
+    @bars = Bar.where("user_id = ?",current_user.id).order(:title).page(params[:page]).per(12)
+  end
+
   # GET /bars/1
   # GET /bars/1.json
   def show

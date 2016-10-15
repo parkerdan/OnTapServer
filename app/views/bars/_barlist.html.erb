@@ -1,0 +1,15 @@
+<div class="margin-left">
+  <div class="bars-columns">
+      <% @bars.each do |bar| %>
+        <%= link_to bar, class: "bar-list-container grey-text" do %>
+        <div>
+          <h2><%= bar.title %></h2>
+            <p class="bar-tap-number"><%= Tap.where("bar_id = ? AND show_card = ?",bar.id,true).count %> Public Brew Cards<p>
+            <p class="bar-tap-number"><%= Tap.where("bar_id = ? AND show_card = ? AND show_recipe = ? AND length(recipe) > ?",bar.id,true,true,0).count %> Public Recipes<p>
+            <p class="bar-tap-number"><%= bar.requests %> Mobile App Views</p>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <%= paginate @bars %>
