@@ -1,5 +1,5 @@
 class ChargesController < ApplicationController
-
+  before_action :authenticate_user!
   def new
   end
 
@@ -9,18 +9,28 @@ class ChargesController < ApplicationController
           @amount = params[:donation_amount].to_i
 
           @text = "Thanks, you've made a one time payment of "
-          # Stripe::Charge.create(
-          #   :amount => (@amount * 100),
-          #   :currency => 'usd',
-          #   :source => params[:stripeTokenOneTime],
-          #   :description => 'Custom Donation'
-          # )
+          Stripe::Charge.create(
+            :amount => (@amount * 100),
+            :currency => 'usd',
+            :source => params[:stripeTokenOneTime],
+            :description => 'Custom Donation'
+          )
       elsif params[:stripeTokenSubscription]
         puts "***************************   SUBSCRIPTION  *****************************************"
         puts params.inspect
 
         @amount = params[:subscribe][:monthly].to_i
         @text = "Thanks, you\'ve signed up for a monthly donation of "
+        customer = Stripe::Customer.create(
+            :source => params[:stripeTokenSubscription],
+            :plan => params[:subscribe][:monthly],
+            :email => params[:email]
+          )
+        @user = User.find_by_id(current_user.id)
+        @user.stripe_id = customer.id
+        @user.save
+
+
       end
 
       # customer = Stripe::Customer.create(

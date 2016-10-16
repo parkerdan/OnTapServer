@@ -16,6 +16,7 @@
             </div>
           <% end %>
         <%= hidden_field_tag(:stripeTokenSubscription) %>
+        <%= hidden_field_tag(:email) %>
         <div class="radio-button-row">
           <%= radio_button "subscribe", "monthly", "1" %>
           <p>$1.00</p>
@@ -48,7 +49,7 @@
 
   </div>
 
-  <div class="payment-options margin-top">
+  <!-- <div class="payment-options margin-top">
     <div class="status-card">
       <h1>October 2016 Status: <span class="yellow-text">Low Funds</span></h1>
       <h1>Mobile AND Web app could experience <span class="yellow-text">DOWNTIME</span></h1>
@@ -56,7 +57,7 @@
       <h1>DONATE</h1>
       <p>Status updated monthly</p>
     </div>
-  </div>
+  </div> -->
 
 
 </div>
@@ -98,14 +99,16 @@
       amount = 2000
     }
     var _this = this;
-    setTimeout(function(){
-      _this.form.submit();
-    },1000);
 
-    // handler.open({
-    //     amount: amount,
-    //     description:"Monthly Donation Amount",
-    //   });
+    handler.open({
+        amount: amount,
+        description:"New Subscription",
+        token: function(token) {
+          document.getElementById("stripeTokenSubscription").value = token.id;
+          document.getElementById("email").value = token.email;
+          _this.form.submit();
+        }
+      });
   });
 
 </script>
