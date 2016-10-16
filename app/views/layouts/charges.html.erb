@@ -11,9 +11,9 @@
   <body>
     <%= render "/layouts/navbar" %>
     <% if flash[:error] %>
-    <div class="alert green-opacity center-all" role="alert"><%= flash[:error] %></div>
-    <% else flash[:notice] %>
-    <div class="alert green-opacity center-all" role="alert"><%= flash[:error] %></div>
+    <div class="alert red-opacity center-all" role="alert"><%= flash[:error] %></div>
+    <% elsif flash[:notice] %>
+    <div class="alert green-opacity center-all" role="alert"><%= flash[:notice] %></div>
     <% end %>
     <div class="background">
 
