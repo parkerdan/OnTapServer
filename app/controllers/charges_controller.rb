@@ -7,15 +7,11 @@ class ChargesController < ApplicationController
   def edit
     user = User.find_by_id(current_user.id)
     @plan_id = user.plan_id
-    # subscription_id = user.subscription_id
-    # if subscription_id != ''
-    #   Stripe.api_key = Rails.configuration.stripe[:secret_key]
-    #   customer = Stripe::Customer.retrieve(user.stripe_id)
-    #   @subscription = customer.subscriptions.retrieve(subscription_id)
-    # end
   end
 
   def create
+    Stripe.api_key = ENV['STRIPE_SECRET_KEY']
+
     # Amount in cents
       if params[:stripeTokenOneTime]
           @amount = params[:donation_amount].to_i
