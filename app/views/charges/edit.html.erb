@@ -1,0 +1,34 @@
+<div class="statement">
+  <h1>Edit Your Donation Plan</h1>
+</div>
+
+
+<div class="payment-options margin-top">
+  <div class="status-card white-text">
+    <h1>Your current plan is <%= number_to_currency(@plan_id.to_i) %> per month</h1>
+    <h3>Your options are</h3>
+    <div class="payment-options">
+      <% unless @plan_id == '1' %>
+        <%= button_to "$1.00 per month", charges_path, method: :patch, data: { confirm: 'Change to $1.00 per month?'}, params: {plan: "1"}, class: "plan-change" %>
+      <% end %>
+
+      <% unless @plan_id == '2' %>
+        <%= button_to "$2.00 per month", charges_path, method: :patch, data: { confirm: 'Change to $2.00 per month?'}, params: {plan: "2"}, class: "plan-change" %>
+      <% end %>
+
+      <% unless @plan_id == '5' %>
+        <%= button_to "$5.00 per month", charges_path, method: :patch, data: { confirm: 'Change to $5.00 per month?'}, params: {plan: "5"}, class: "plan-change" %>
+      <% end %>
+
+      <% unless @plan_id == '10' %>
+        <%= button_to "$10 per month", charges_path, method: :patch, data: { confirm: 'Change to $10 per month?'}, params: {plan: "10"}, class: "plan-change" %>
+      <% end %>
+
+      <% unless @plan_id == '20' %>
+        <%= button_to "$20 per month", charges_path, method: :patch, data: { confirm: 'Change to $20 per month?'}, params: {plan: "20"}, class: "plan-change" %>
+      <% end %>
+
+      <%= button_to "Cancel Donation", charges_path, method: :patch, data: { confirm: 'Cancel Plan?  This will make me cry :( '}, params: {plan: 'Cancel'}, class: "plan-cancel" %>
+    </div>
+  </div>
+</div>

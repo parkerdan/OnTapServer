@@ -2,6 +2,10 @@
   <div class="margin-left">
     <h1 class="section-header">Edit Account</h1>
     <%= render 'form' %>
-
+    <% if @user.persisted? && @user.subscription_id != "" %>
+      <div class="margin-left">
+        <%= button_to "Edit Donation", edit_charges_path, method: :get, class: "button blue white-text" %>
+      </div>
+    <% end %>
   </div>
 </div>

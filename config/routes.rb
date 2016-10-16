@@ -14,7 +14,12 @@ Rails.application.routes.draw do
     delete :destroy, on: :collection
   end
 
-  resources :charges, only: [:new,:create]
+  resources :charges, only: [:new, :create] do
+    collection do
+      get   :edit
+      patch :update
+    end
+  end
 
   # You can have the root of your site routed with "root"
   root 'bars#landing'

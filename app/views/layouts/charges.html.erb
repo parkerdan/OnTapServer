@@ -3,6 +3,9 @@
   <head>
     <%= stylesheet_link_tag 'charges'%>
     <%= stylesheet_link_tag 'navbar'%>
+    <%= javascript_include_tag 'application' %>
+    <%= favicon_link_tag 'favicon.ico' %>
+    <%= csrf_meta_tags %>
     <script src="https://checkout.stripe.com/checkout.js"></script>
   </head>
   <body>
@@ -10,7 +13,9 @@
     <% if flash[:error] %>
     <div class="alert green-opacity center-all" role="alert"><%= flash[:error] %></div>
     <% end %>
+    <div class="background">
 
     <%= yield %>
+  </div>
   </body>
 </html>
