@@ -8,7 +8,6 @@ class BarsController < ApplicationController
   end
 
   def landing
-
   end
 
   def user_bars

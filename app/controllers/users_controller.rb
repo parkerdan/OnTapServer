@@ -22,7 +22,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         session[:user_id] = @user.id
-        format.html { redirect_to new_charge_path, notice: 'User was successfully created.' }
+        format.html { redirect_to new_charge_path, notice: 'Please bookmark  https://brewcards.herokuapp.com/  for future reference as this is our secure site' }
       else
         format.html { render :new }
       end
