@@ -1,0 +1,153 @@
+/* line 5, /Users/danparker/OnTapServer/app/assets/stylesheets/charges.scss */
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* line 10, /Users/danparker/OnTapServer/app/assets/stylesheets/charges.scss */
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/* line 15, /Users/danparker/OnTapServer/app/assets/stylesheets/charges.scss */
+a:hover {
+  opacity: 0.3;
+}
+
+/* line 19, /Users/danparker/OnTapServer/app/assets/stylesheets/charges.scss */
+.background {
+  background-image: url(/assets/beerglass-2115e86d1b4f5698e834ab807c73ecf3590ea3fe0c1506c7159f8ea3af38c79d.jpg);
+  background-repeat: repeat-y;
+  min-height: 1000px;
+}
+
+/* line 25, /Users/danparker/OnTapServer/app/assets/stylesheets/charges.scss */
+.statement {
+  padding: 10px 100px;
+  color: grey;
+  text-align: center;
+}
+
+/* line 31, /Users/danparker/OnTapServer/app/assets/stylesheets/charges.scss */
+.statement h1 {
+  margin: 0px;
+  padding: 20px 0px;
+}
+
+/* line 37, /Users/danparker/OnTapServer/app/assets/stylesheets/charges.scss */
+.payment-options {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+}
+
+/* line 44, /Users/danparker/OnTapServer/app/assets/stylesheets/charges.scss */
+.pay-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(152, 152, 152, 0.3);
+  height: 200px;
+  width: 400px;
+  border-radius: 20px;
+  color: white;
+}
+
+/* line 56, /Users/danparker/OnTapServer/app/assets/stylesheets/charges.scss */
+.pay-container h1, p {
+  margin: 0px;
+}
+
+/* line 60, /Users/danparker/OnTapServer/app/assets/stylesheets/charges.scss */
+.margin-top {
+  margin-top: 30px;
+}
+
+/* line 64, /Users/danparker/OnTapServer/app/assets/stylesheets/charges.scss */
+.status-card {
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+/* line 73, /Users/danparker/OnTapServer/app/assets/stylesheets/charges.scss */
+.yellow-text {
+  color: yellow;
+}
+
+/* line 77, /Users/danparker/OnTapServer/app/assets/stylesheets/charges.scss */
+.green-text {
+  color: green;
+  font-weight: bolder;
+}
+
+/* line 82, /Users/danparker/OnTapServer/app/assets/stylesheets/charges.scss */
+.status-card h1, h2, p {
+  margin: 0px;
+}
+
+/* line 86, /Users/danparker/OnTapServer/app/assets/stylesheets/charges.scss */
+#donation-amount {
+  height: 30px;
+  width: 50px;
+  border-radius: 5px;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* line 95, /Users/danparker/OnTapServer/app/assets/stylesheets/charges.scss */
+.button {
+  background-color: blue;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 15px;
+}
+
+/* line 103, /Users/danparker/OnTapServer/app/assets/stylesheets/charges.scss */
+.radio-button-row {
+  display: flex;
+  flex-direction: row;
+  padding: 5px 0px;
+}
+
+/* line 109, /Users/danparker/OnTapServer/app/assets/stylesheets/charges.scss */
+.radio-button-row p {
+  margin: 0px 10px 0px 4px;
+}
+
+/* line 113, /Users/danparker/OnTapServer/app/assets/stylesheets/charges.scss */
+.alert {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 60px;
+  background-color: rgba(255, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+}
+
+/* line 123, /Users/danparker/OnTapServer/app/assets/stylesheets/charges.scss */
+.plan-change {
+  margin: 10px;
+  background-color: blue;
+  padding: 10px;
+  color: white;
+  font-size: 15px;
+}
+
+/* line 131, /Users/danparker/OnTapServer/app/assets/stylesheets/charges.scss */
+.plan-cancel {
+  margin: 10px;
+  background-color: red;
+  padding: 10px;
+  color: white;
+  font-size: 15px;
+}
