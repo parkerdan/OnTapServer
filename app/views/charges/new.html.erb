@@ -1,36 +1,48 @@
 <div class="background">
   <div class="statement">
     <h1>Brew Cards is free for you and me!</h1>
-    <h2>Help keep it live and running!</h2>
-    <h2>For $1-$5 a month, YOU can make a HUGE difference...that's A (singular) beer...</h2>
+    <h2>Help keep it running!</h2>
+    <h1>Donate Today!</h1>
   </div>
 
   <div class="payment-options">
 
-    <%= form_tag charges_path(1) do %>
+    <%= form_tag charges_path do %>
       <div class="pay-container">
-          <h1>Monthly Donation</h1>
-          <p>go ahead...change the amount...feels good to give</p>
-            <% if flash[:error].present? %>
-              <div id="error_explanation">
-                <p><%= flash[:error] %></p>
-              </div>
-            <% end %>
-          <%= number_field_tag "subscription-amount", 1, min:1, max:10000  %>
-          <button class="button" id="subscribe-button">Checkout via STRIPE</button>
+        <h1>Monthly Donation</h1>
+          <% if flash[:error].present? %>
+            <div id="error_explanation">
+              <p><%= flash[:error] %></p>
+            </div>
+          <% end %>
+        <%= hidden_field_tag(:stripeTokenSubscription) %>
+        <div class="radio-button-row">
+          <%= radio_button "subscribe", "monthly", "1" %>
+          <p>$1.00</p>
+          <%= radio_button "subscribe", "monthly", "2", checked: true %>
+          <p>$2.00</p>
+          <%= radio_button "subscribe", "monthly", "5" %>
+          <p>$5.00</p>
+          <%= radio_button "subscribe", "monthly", "10" %>
+          <p>$10.00</p>
+          <%= radio_button "subscribe", "monthly", "20" %>
+          <p>$20.00</p>
+        </div>
+        <%= submit_tag "Checkout via STRIPE", class:"button",id:"subscribe-button" %>
       </div>
     <% end %>
 
-    <%= form_tag charges_path(2) do %>
+    <%= form_tag charges_path do %>
       <div class="pay-container">
-          <h1>One Time Donation</h1>
-            <% if flash[:error].present? %>
-              <div id="error_explanation">
-                <p><%= flash[:error] %></p>
-              </div>
-            <% end %>
-          <%= number_field_tag "donation-amount", 10, min:1, max:10000  %>
-          <button class="button" id="one-time-button">Checkout via STRIPE</button>
+        <h1>One Time Donation</h1>
+          <% if flash[:error].present? %>
+            <div id="error_explanation">
+              <p><%= flash[:error] %></p>
+            </div>
+          <% end %>
+        <%= hidden_field_tag(:stripeTokenOneTime) %>
+        <%= number_field_tag "donation_amount", 10, min:1, max:10000, id: "donation-amount" %>
+        <%= submit_tag "Checkout via STRIPE", class:"button",id:"one-time-button" %>
       </div>
     <% end %>
 
@@ -38,13 +50,11 @@
 
   <div class="payment-options margin-top">
     <div class="status-card">
-      <h1>Operational Status: <span class="yellow-text">Low Funds</span></h1>
+      <h1>October 2016 Status: <span class="yellow-text">Low Funds</span></h1>
       <h1>Mobile AND Web app could experience <span class="yellow-text">DOWNTIME</span></h1>
-      <h1>I need a few more dollars a month to have <span class="green-text">ZERO downtime</span></h1>
+      <h1>A few more monthly donations equal <span class="green-text">ZERO downtime!!!</span></h1>
       <h1>DONATE</h1>
-      <p>This page will be updated with current status monthly</p>
-
-
+      <p>Status updated monthly</p>
     </div>
   </div>
 
@@ -56,25 +66,46 @@
     name:"BrewCards",
     locale:"auto",
     image:"<%= asset_path('logo.png') %>",
-    zipCode:"true",
+    zipCode:true,
   });
 
   document.getElementById("one-time-button").addEventListener('click',function(e){
     e.preventDefault();
-    var amount = document.getElementById("donation-amount").value
+    var _this = this;
+    var amount = document.getElementById("donation_amount").value
     handler.open({
         amount: (amount * 100),
         description:"One Time Donation",
+        token: function(token) {
+          document.getElementById("stripeTokenOneTime").value = token.id;
+          _this.form.submit();
+        }
       });
   });
 
   document.getElementById("subscribe-button").addEventListener('click',function(e){
     e.preventDefault();
-    var amount = document.getElementById("subscription-amount").value
-    handler.open({
-        amount: (amount * 100),
-        description:"Monthly Donation Amount",
-      });
+    var amount;
+    if (document.getElementById("subscribe_monthly_1").checked) {
+      amount = 100
+    } else if (document.getElementById("subscribe_monthly_2").checked) {
+      amount = 200
+    } else if (document.getElementById("subscribe_monthly_5").checked) {
+      amount = 500
+    } else if (document.getElementById("subscribe_monthly_10").checked) {
+      amount = 1000
+    } else if (document.getElementById("subscribe_monthly_1").checked) {
+      amount = 2000
+    }
+    var _this = this;
+    setTimeout(function(){
+      _this.form.submit();
+    },1000);
+
+    // handler.open({
+    //     amount: amount,
+    //     description:"Monthly Donation Amount",
+    //   });
   });
 
 </script>
