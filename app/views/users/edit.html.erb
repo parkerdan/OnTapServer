@@ -4,7 +4,7 @@
     <%= render 'form' %>
     <% if @user.persisted? && @user.subscription_id != "" %>
       <div class="margin-left">
-        <%= button_to "Edit Donation", "https://brewcards.herokuapp.com/charges/edit", method: :get, class: "button blue white-text" %>
+        <%= button_to "Edit Donation", edit_charges_path, method: :get, class: "button blue white-text" %>
       </div>
     <% end %>
   </div>

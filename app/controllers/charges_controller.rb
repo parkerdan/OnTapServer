@@ -49,7 +49,7 @@ class ChargesController < ApplicationController
   end
 
   def update
-    Stripe.api_key = Rails.configuration.stripe[:secret_key]
+    Stripe.api_key = ENV['STRIPE_SECRET_KEY']
 
     new_plan = params[:plan]
     user = User.find_by_id(current_user.id)

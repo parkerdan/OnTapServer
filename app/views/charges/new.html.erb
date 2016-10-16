@@ -62,7 +62,7 @@
 
 <script>
   var handler = StripeCheckout.configure({
-    key:"<%= Rails.configuration.stripe[:publishable_key] %>",
+    key:"<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>",
     name:"BrewCards",
     locale:"auto",
     image:"<%= asset_path('logo.png') %>",
