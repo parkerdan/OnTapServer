@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= stylesheet_link_tag 'charges'%>
+    <%= stylesheet_link_tag 'navbar'%>
+    <script src="https://checkout.stripe.com/checkout.js"></script>
+  </head>
+  <body>
+    <%= render "/layouts/navbar" %>
+    <%= yield %>
+  </body>
+</html>

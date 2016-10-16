@@ -1,0 +1,100 @@
+// Place all the styles related to the charges controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+a:hover {
+  opacity:0.3;
+}
+
+.background {
+  background-image: image-url('beerglass.jpg');
+  background-repeat: repeat-y;
+  min-height: 1000px;
+}
+
+.statement {
+  padding: 10px 100px;
+  color: grey;
+  text-align: center;
+}
+
+.statement h1 {
+  margin: 0px;
+}
+
+
+.payment-options {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.pay-container  {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(152,152,152,.3);
+  height: 200px;
+  width: 400px;
+  border-radius: 20px;
+  color: white;
+}
+
+.pay-container h1,p {
+  margin: 0px;
+}
+
+.margin-top {
+  margin-top: 30px;
+}
+
+.status-card {
+  padding: 20px;
+  background-color: rgba(255,255,255,.5);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.yellow-text {
+  color: yellow;
+}
+
+.green-text {
+  color: green;
+  font-weight: bolder;
+}
+
+.status-card h1,h2,p {
+  margin: 0px;
+}
+
+#donation-amount, #subscription-amount {
+  height: 30px;
+  width: 50px;
+  border-radius: 5px;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.button {
+  background-color: blue;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 15px;
+}
