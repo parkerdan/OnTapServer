@@ -1,6 +1,16 @@
 class ChargesController < ApplicationController
   before_action :authenticate_user!
+
   def new
+  end
+
+  def edit
+    # subscription_id = User.find_by_id(current_user.id).subscription_id
+    # if subscription_id != ''
+    #   Stripe.api_key = Rails.configuration.stripe[:secret_key]
+    #   customer = Stripe::Customer.retrieve(stripe_id)
+    #   @subscription = customer.subscriptions.retrieve(subscription_id)
+    # end
   end
 
   def create
@@ -16,9 +26,6 @@ class ChargesController < ApplicationController
             :description => 'Custom Donation'
           )
       elsif params[:stripeTokenSubscription]
-        puts "***************************   SUBSCRIPTION  *****************************************"
-        puts params.inspect
-
         @amount = params[:subscribe][:monthly].to_i
         @text = "Thanks, you\'ve signed up for a monthly donation of "
         customer = Stripe::Customer.create(
@@ -28,31 +35,13 @@ class ChargesController < ApplicationController
           )
         @user = User.find_by_id(current_user.id)
         @user.stripe_id = customer.id
+        @user.subscription_id = customer.subscriptions[0].id
         @user.save
-
-
       end
 
-      # customer = Stripe::Customer.create(
-      # :email => params[:stripeEmail],
-      # :source  => params[:stripeToken]
-      # )
-
-      # customer = Stripe::Customer.create(
-      # :email => params[:stripeEmail],
-      # :source  => params[:stripeToken]
-      # )
-      #
-      # charge = Stripe::Charge.create(
-      # :customer    => customer.id,
-      # :amount      => '500',
-      # :description => 'Rails Stripe customer',
-      # :currency    => 'usd'
-      # )
-
-  # rescue Stripe::CardError => e
-  #   flash[:error] = e.message
-  #   redirect_to new_charge_path
+  rescue Stripe::CardError => e
+    flash[:error] = e.message
+    redirect_to new_charge_path
 
   end
 

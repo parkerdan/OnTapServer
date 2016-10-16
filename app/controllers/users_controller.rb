@@ -32,15 +32,19 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
-    respond_to do |format|
-      if @user.update(user_params)
-        format.html { redirect_to edit_users_path, notice: 'Profile was successfully updated.' }
+      @user = current_user
+      if @user.authenticate(params[:user][:current_password])
+        if @user.update user_params
+          redirect_to edit_users_path, notice: "Profile updated"
+        else
+          flash[:alert] = "See errors below"
+          render :edit
+        end
       else
-        format.html { render :edit }
+        flash[:alert] = "Wrong password"
+        render :edit
       end
     end
-  end
-
   # DELETE /users/1
   # DELETE /users/1.json
 
