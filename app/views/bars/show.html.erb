@@ -19,25 +19,25 @@
     <% end %>
 
 
-    <div class="bar-taps-container">
+    <div class="bar-taps-container margin-top">
       <% @taps.each do |t,i| %>
       <div class="bar-tap-container">
 
-        <div class="bar-tap-edit-container">
-          <% if user_signed_in? && @bar.user_id == current_user.id %>
-          <p><%= link_to 'Edit Card', edit_bar_tap_path(@bar,t), class: "small-button blue" %></p>
-            <% if t.show_card %>
-              <p class="green-text">public</p>
-            <% else %>
-              <p class="red-text">private</p>
-            <% end %>
-          <% end %>
-        </div>
+        <% if user_signed_in? && @bar.user_id == current_user.id %>
+          <div class="bar-tap-edit-container">
+            <p><%= link_to 'Edit Card', edit_bar_tap_path(@bar,t), class: "small-button blue" %></p>
+              <% if t.show_card %>
+                <p class="green-text">public</p>
+              <% else %>
+                <p class="red-text">private</p>
+              <% end %>
+          </div>
+        <% end %>
 
         <div class="preview-card" style="background-color:<%= t.color %>">
           <% if t.show_recipe && t.recipe.length > 0 %>
 
-          <div class="ribbon" data-recipe="<%= t.recipe %>" ><a href="#recipe-modal"><span class="ribbon-text" >RECIPE</span></a></div>
+          <div class="ribbon" data-recipe="<%= t.recipe %>" data-title="<%= t.title %>" ><a href="#recipe-modal"><span class="ribbon-text" >RECIPE</span></a></div>
 
           <% end %>
           <div class="card-title center-all" >
@@ -69,7 +69,7 @@
 <div id="recipe-modal" class="modalDialog">
     <div>	<a href="#close" title="Close" class="close">X</a>
 
-        	<h2>Recipe</h2>
+        	<h2 id="modal-header">Recipe</h2>
 
         <div id="recipe-modal-text"></div>
     </div>

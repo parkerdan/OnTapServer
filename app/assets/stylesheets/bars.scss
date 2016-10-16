@@ -20,7 +20,9 @@
 
 .bar-tap-edit-container {
   display: flex;
+  align-items: center;
   justify-content: space-around;
+  height: 50px;
 }
 // same styles as #title-preview in taps.scss
 .bar-tap-title {
@@ -170,4 +172,9 @@
 }
 .close:hover {
     background: #00d9ff;
+}
+
+#modal-header {
+  text-align: center;
+  margin-bottom: 10px;
 }
