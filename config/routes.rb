@@ -24,6 +24,8 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'bars#landing'
 
+  get '/apple-app-site-association' => 'bars#apple_app_site_association'
+
   get 'landing' => 'bars#landing'
   get 'userbars' => 'bars#user_bars', as: :user_bars
 

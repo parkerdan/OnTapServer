@@ -1,6 +1,14 @@
 class BarsController < ApplicationController
   before_action :set_bar, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:show, :index, :landing]
+  before_action :authenticate_user!, except: [:show, :index, :landing, :apple_app_site_association]
+
+
+  def apple_app_site_association
+    association_json = File.read(Rails.public_path + "apple-app-site-association")
+    render :json => association_json, :content_type => "application/pkcs7-mime"
+  end
+
+
   # GET /bars
   # GET /bars.json
   def index
