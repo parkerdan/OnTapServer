@@ -4,8 +4,6 @@
 
   <%= render 'form' %>
 
-  <div>
-    <p>
-      <%= link_to 'Destroy', [@bar,@tap], method: :delete, data: { confirm: 'Are you sure?' }, class: "button red" %></p>
-    </div>
-</div>  
+      <%= button_to 'Destroy', [@bar,@tap], method: :delete, data: { confirm: 'Are you sure?' }, class: "button red" %>
+      
+</div>

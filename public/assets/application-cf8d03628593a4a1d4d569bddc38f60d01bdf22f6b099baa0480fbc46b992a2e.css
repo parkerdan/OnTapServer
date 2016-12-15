@@ -658,58 +658,58 @@ a:hover {
   opacity: 0.3;
 }
 
-/* line 45, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 46, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .page-container {
   padding: 20px 40px;
   background-color: rgba(152, 152, 152, 0.2);
 }
 
-/* line 50, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 51, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .green {
   background-color: green;
 }
 
-/* line 54, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 55, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .red {
   background-color: red;
 }
 
-/* line 58, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 59, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .blue {
   background-color: blue;
 }
 
-/* line 62, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 63, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .yellow {
   background-color: #ffcc00;
 }
 
-/* line 66, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 67, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .white-text {
   color: white;
 }
 
-/* line 70, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 71, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .grey-text {
   color: grey;
 }
 
-/* line 74, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 75, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .green-text {
   color: green;
 }
 
-/* line 78, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 79, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .red-text {
   color: red;
 }
 
-/* line 82, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 83, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .black-shadow {
   text-shadow: 2px 2px black;
 }
 
-/* line 86, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 87, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .button {
   padding: 10px;
   border-radius: 10px;
@@ -717,7 +717,7 @@ a:hover {
   font-size: 20px;
 }
 
-/* line 93, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 94, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .small-button {
   padding: 10px;
   border-radius: 5px;
@@ -725,7 +725,7 @@ a:hover {
   font-size: 15px;
 }
 
-/* line 101, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 102, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .text-input {
   height: 20px;
   width: 300px;
@@ -734,7 +734,7 @@ a:hover {
   margin-bottom: 20px;
 }
 
-/* line 109, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 110, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .text-field {
   height: 100px;
   width: 500px;
@@ -743,7 +743,7 @@ a:hover {
   margin-bottom: 20px;
 }
 
-/* line 117, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 118, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .section-header {
   margin: 0px;
   padding: 10px 0px 20px 0px;
@@ -751,33 +751,33 @@ a:hover {
   color: white;
 }
 
-/* line 124, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 125, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .margin-left {
   margin-left: 50px;
 }
 
-/* line 128, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 129, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .margin-top {
   margin-top: 10px;
 }
 
-/* line 132, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 133, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .margin-little-left {
   margin-left: 20px;
 }
 
-/* line 136, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 137, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .center-all {
   align-items: center;
   justify-content: center;
 }
 
-/* line 141, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 142, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .padding {
   padding: 5px;
 }
 
-/* line 145, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 146, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .alert {
   display: flex;
   flex-direction: row;
@@ -785,17 +785,17 @@ a:hover {
   height: 60px;
 }
 
-/* line 152, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 153, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .green-opacity {
   background-color: rgba(0, 255, 0, 0.5);
 }
 
-/* line 156, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 157, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .red-opacity {
   background-color: rgba(255, 0, 0, 0.5);
 }
 
-/* line 160, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 161, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .cat-pants-button {
   margin: 0px 10px;
   background-color: red;
@@ -804,23 +804,23 @@ a:hover {
   color: white;
 }
 
-/* line 168, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 169, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .cat-pants-button-container {
   display: flex;
   flex-direction: row;
 }
 
-/* line 173, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 174, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .paginator-container {
   padding: 20px;
 }
 
-/* line 177, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 178, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .padding {
   padding: 5px;
 }
 
-/* line 181, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
+/* line 182, /Users/danparker/OnTapServer/app/assets/stylesheets/application.scss */
 .current {
   background-color: white;
   border-radius: 5px;

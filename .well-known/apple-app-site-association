@@ -1,0 +1,11 @@
+{
+   "applinks":{
+     "apps":[],
+     "details":[
+       {
+         "appID":"33XCWK3S2D.com.on.tap",
+         "paths":["/bars/*"]
+       }
+     ]
+   }
+ }
