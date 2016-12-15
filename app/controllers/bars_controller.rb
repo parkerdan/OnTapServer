@@ -4,8 +4,7 @@ class BarsController < ApplicationController
 
 
   def apple_app_site_association
-    association_json = File.read(Rails.public_path + "apple-app-site-association")
-    render :json => association_json, :content_type => "application/pkcs7-mime"
+    send_file "#{Rails.root}/public/apple-app-site-association", {:filename => "apple-app-site-association", :type => "application/pkcs7-mime" , :x_sendfile => true}
   end
 
 
