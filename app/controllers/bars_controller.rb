@@ -4,7 +4,7 @@ class BarsController < ApplicationController
 
 
   def apple_app_site_association
-    send_file "#{Rails.root}/public/apple-app-site-association", {:filename => "apple-app-site-association", :type => "application/pkcs7-mime" , :x_sendfile => true}
+    send_file "#{Rails.root}/public/apple-site-association", {:filename => "apple-app-site-association", :type => "application/pkcs7-mime" , :x_sendfile => true}
   end
 
 
