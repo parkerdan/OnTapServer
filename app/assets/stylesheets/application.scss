@@ -20,13 +20,22 @@
 @import "colors";
 @import "font-awesome";
 
-.nav-button {
+.accent-color {
+  color: $accent-color;
+}
+
+.accent-button {
   background-color: $accent-color;
   border-radius: 5px;
   color: white;
   display: flex;
   align-items: center;
   padding: 5px;
+  text-decoration: none;
+}
+
+.padding {
+  padding: 10px;
 }
 
 .margin-right {

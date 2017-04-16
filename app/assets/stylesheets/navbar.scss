@@ -18,6 +18,9 @@
   display: flex;
   flex-direction: row;
   padding:10px 0px 10px 10px;
+  a {
+    text-decoration: none;
+  }
 };
 
 .nav-header {
@@ -30,8 +33,6 @@
 };
 
 .nav-body {
-  display: flex;
-  flex: 1;
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
@@ -41,3 +42,40 @@
   color: $secondary-text-color;
   margin-left: 15px;
 };
+
+.no-dropdown {
+  display: none;
+  @media (min-width: 700px) {
+    display: flex;
+    flex: 1;
+  }
+}
+
+.dropdown {
+  display: flex;
+  flex: 1;
+  @media (min-width: 700px) {
+    display: none;
+    flex: 0;
+  }
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: $primary-color-light;
+  min-width: 160px;
+  z-index: 1;
+};
+
+.dropdown-content a {
+  color: $secondary-text-color;
+  padding: 12px 16px;
+  display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}

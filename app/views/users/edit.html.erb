@@ -1,4 +1,19 @@
-<div class="bar-image">
+<div class="register-header">
+  <h1>Edit Account</h1>
+</div>
+
+<div class="divider"></div>
+
+  <%= render 'form' %>
+
+
+  <% if @user.persisted? && @user.subscription_id != "" %>
+    <div class="margin-left">
+      <%= button_to "Edit Donation", edit_charges_path, method: :get, class: "button blue white-text" %>
+    </div>
+  <% end %>
+
+<!-- <div class="bar-image">
   <div class="margin-left">
     <h1 class="section-header">Edit Account</h1>
     <%= render 'form' %>
@@ -8,4 +23,4 @@
       </div>
     <% end %>
   </div>
-</div>
+</div> -->

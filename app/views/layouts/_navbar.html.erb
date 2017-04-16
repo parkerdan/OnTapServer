@@ -1,50 +1,56 @@
 <div class="navbar-main">
 
   <div class="nav-header">
-
       <%= link_to bars_path do %>
         <%= image_tag "logoSmall.png", class: "nav-bar-logo" %>
       <% end %>
 
-
-
     <% if user_signed_in? %>
       <%= link_to "Donate to Brew Cards", new_charge_path, class: "nav-gray-text" %>
     <% end %>
-
   </div>
 
 
 
-  <div class="nav-body">
-    <% if user_signed_in? %>
-
-      <%= link_to "My Account", user_bars_path, class: "nav-gray-text" %>
-
-      <%= link_to "Create Bar", new_bar_path, class: "nav-gray-text" %>
-
-      <%= link_to "All Bars", bars_path, class: "nav-gray-text" %>
-
+  <div class="nav-body no-dropdown">
+      <% if user_signed_in? %>
+      <%= link_to "My Places", user_bars_path, class: "nav-gray-text" %>
+      <%= link_to "New Place", new_bar_path, class: "nav-gray-text" %>
+      <%= link_to "All Places", bars_path, class: "nav-gray-text" %>
       <%= link_to "Sign Out", sessions_path, class: "nav-gray-text", method: :delete %>
-
       <%= link_to "Edit Account", edit_users_path, class: "nav-gray-text margin-right" %>
-
-
-    <% else %>
-
+      <% else %>
       <!-- for production link to secure heroku site -->
-      <!-- <%= link_to "Sign In", "https://brewcards.herokuapp.com/sessions/new", class:"primary-text" %> -->
+      <!-- <%= link_to "Sign In", "https://brewcards.herokuapp.com/sessions/new", class:"accent-button margin-right" %> -->
       <!-- for dev link to local  -->
-        <%= link_to "Sign In", new_session_path, class: "nav-button margin-right"  %>
-
-
+      <%= link_to "Sign In", new_session_path, class: "accent-button margin-right"  %>
       <!-- for production link to secure heroku site -->
-      <!-- <%= link_to "Register", "https://brewcards.herokuapp.com/users/new", class: "primary-text" %> -->
+      <!-- <%= link_to "Register", "https://brewcards.herokuapp.com/users/new", class: "accent-button margin-right" %> -->
       <!-- for dev link to local  -->
-      <%= link_to "Register", new_user_path, class: "nav-button margin-right" %>
+      <%= link_to "Register", new_user_path, class: "accent-button margin-right" %>
+      <% end %>
+  </div>
 
-
-    <% end %>
+  <div class="nav-body dropdown">
+    <%= fa_icon "bars 2x", class: "margin-right accent-color" %>
+    <div class="dropdown-content">
+      <% if user_signed_in? %>
+      <%= link_to "My Places", user_bars_path, class: "nav-gray-text" %>
+      <%= link_to "New Place", new_bar_path, class: "nav-gray-text" %>
+      <%= link_to "All Places", bars_path, class: "nav-gray-text" %>
+      <%= link_to "Sign Out", sessions_path, class: "nav-gray-text", method: :delete %>
+      <%= link_to "Edit Account", edit_users_path, class: "nav-gray-text margin-right" %>
+      <% else %>
+      <!-- for production link to secure heroku site -->
+      <!-- <%= link_to "Sign In", "https://brewcards.herokuapp.com/sessions/new", class:"accent-button margin-right" %> -->
+      <!-- for dev link to local  -->
+      <%= link_to "Sign In", new_session_path, class: "accent-button margin-right"  %>
+      <!-- for production link to secure heroku site -->
+      <!-- <%= link_to "Register", "https://brewcards.herokuapp.com/users/new", class: "accent-button margin-right" %> -->
+      <!-- for dev link to local  -->
+      <%= link_to "Register", new_user_path, class: "accent-button margin-right" %>
+      <% end %>
+    </div>
   </div>
 
 </div>

@@ -75,7 +75,7 @@
   width: 250px;
   flex-direction: column;
   background-color: $primary-color-light;
-  margin: 10px;
+  margin: 10px 10px 0px 10px;
   .card-heading {
     display: flex;
     flex: 1;
@@ -120,13 +120,6 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  padding: 20px 0px;
-  .footer-button {
-    background-color: $accent-color;
-    border-radius: 5px;
-    padding: 10px;
-  };
-  p {
-    color: white;
-  }
+  margin: 20px;
+  height: 40px;
 }

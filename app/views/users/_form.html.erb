@@ -2,7 +2,7 @@
   <% if @user.errors.any? %>
   <ul>
     <% @user.errors.full_messages.each do |msg| %>
-      <li class="white-text"><%= msg %></li>
+      <li><%= msg %></li>
     <% end %>
   </ul>
   <% end %>
@@ -11,7 +11,7 @@
   <div class="card-row-container">
     <div class="register-card">
       <div class="card-heading">
-        <p>Email</p>
+        <p>Enter Email</p>
       </div>
       <div class="card-center">
         <%= f.text_field :email, class: "text-input" %>
@@ -24,9 +24,9 @@
     <div class="register-card">
       <div class="card-heading">
         <% if @user.persisted? %>
-          <p>New Password</p>
+          <p>Enter New Password</p>
         <% else %>
-          <p>Password</p>
+          <p>Enter Password</p>
         <% end %>
       </div>
       <div class="card-center">
@@ -36,15 +36,13 @@
         <%= label_tag :password, "", class:"catpants" %>
       </div>
     </div>
-  </div>
 
-  <div class="card-row-container">
     <div class="register-card">
       <div class="card-heading">
         <% if @user.persisted? %>
-          <p>New Password Confirmation</p>
+          <p>Confirm New Password</p>
         <% else %>
-          <p>Password Confirmation</p>
+          <p>Confirm Password</p>
         <% end %>
       </div>
       <div class="card-center">
@@ -57,7 +55,7 @@
 
     <div class="register-card">
       <div class="card-heading">
-        <p>Click Save!</p>
+        <p>Save Your Account</p>
       </div>
 
       <div class="card-center">
@@ -65,6 +63,7 @@
       </div>
 
       <div class="card-footer">
+        <p>Check out Cat Pants!</p>
         <%= link_to "Cat Pants Gem","https://rubygems.org/gems/catpants", class: "cat-pants-button" %>
       </div>
     </div>
