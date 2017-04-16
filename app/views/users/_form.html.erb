@@ -8,40 +8,69 @@
   <% end %>
 
 
-  <div class="margin-left">
-    <h2 class="white-text">Email</h2>
-    <%= f.text_field :email, class: "text-input" %>
-
-    <% if @user.persisted? %>
-      <h2 class="white-text black-shadow"><%= label_tag :current_password, "Current Password",class:"catpants" %></h2>
-      <%= f.password_field :current_password, class: "text-input catpants-password" %>
-    <% end %>
-
-    <% if @user.persisted? %>
-      <h2 class="white-text black-shadow"><%= label_tag :password, "New Password",class:"catpants" %></h2>
-    <% else %>
-      <h2 class="white-text black-shadow"><%= label_tag :password, "Password",class:"catpants" %></h2>
-    <% end %>
-    <%= f.password_field :password, class: "text-input catpants-password" %>
-
-    <% if @user.persisted? %>
-      <h2 class="white-text black-shadow"><%= label_tag :password_confirmation, "New Password Confirmation",class:"catpants" %></h2>
-    <% else %>
-      <h2 class="white-text black-shadow"><%= label_tag :password_confirmation, "Password Confirmation",class:"catpants" %></h2>
-    <% end %>
-
-
-    <div class="cat-pants-button-container">
-      <%= f.password_field :password_confirmation, class: "text-input catpants-password" %>
-
-      <%= link_to "https://rubygems.org/gems/catpants" do %>
-      <p class="cat-pants-button">Cat Pants Gem</p>
-      <% end %>
+  <div class="card-row-container">
+    <div class="register-card">
+      <div class="card-heading">
+        <p>Email</p>
+      </div>
+      <div class="card-center">
+        <%= f.text_field :email, class: "text-input" %>
+      </div>
+      <div class="card-footer">
+        <p>Your email address is not shared with anyone and Brew Cards doesn't spam you...that's not cool.</p>
+      </div>
     </div>
-    <br/>
+
+    <div class="register-card">
+      <div class="card-heading">
+        <% if @user.persisted? %>
+          <p>New Password</p>
+        <% else %>
+          <p>Password</p>
+        <% end %>
+      </div>
+      <div class="card-center">
+        <%= f.password_field :password, class: "text-input catpants-password" %>
+      </div>
+      <div class="card-footer">
+        <%= label_tag :password, "", class:"catpants" %>
+      </div>
+    </div>
   </div>
 
-  <div class="margin-left">
-    <%= f.button :submit, "Save", class: "button green" %>
+  <div class="card-row-container">
+    <div class="register-card">
+      <div class="card-heading">
+        <% if @user.persisted? %>
+          <p>New Password Confirmation</p>
+        <% else %>
+          <p>Password Confirmation</p>
+        <% end %>
+      </div>
+      <div class="card-center">
+        <%= f.password_field :password_confirmation, class: "text-input catpants-password" %>
+      </div>
+      <div class="card-footer">
+        <%= label_tag :password_confirmation, "", class:"catpants" %>
+      </div>
+    </div>
+
+    <div class="register-card">
+      <div class="card-heading">
+        <p>Click Save!</p>
+      </div>
+
+      <div class="card-center">
+        <%= f.button :submit, "Save", class: "sign-up-button" %>
+      </div>
+
+      <div class="card-footer">
+        <%= link_to "Cat Pants Gem","https://rubygems.org/gems/catpants", class: "cat-pants-button" %>
+      </div>
+    </div>
+
   </div>
+
+
+
 <% end %>

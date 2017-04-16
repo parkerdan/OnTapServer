@@ -13,7 +13,7 @@
   background-color: $primary-color;
   display: flex;
   flex-direction: column;
-  padding: 80px 0px;
+  padding: 40px 0px 80px 0px;
   h1 {
     color: $primary-color-text;
     font-size: 5em;
@@ -25,6 +25,12 @@
     color: $primary-color-text;
     text-align: center;
     font-size: 2em;
+  }
+  h4 {
+    margin: 0px;
+    color: $primary-color-text;
+    text-align: center;
+    font-size: 1.5em;
   }
 }
 
@@ -93,36 +99,6 @@
 
 .secondary-text {
   color: $secondary-text-color;
-}
-
-
-// ***********************************************************************
-
-
-.info-row {
-  display: flex;
-  flex-direction: row;
-  border-bottom: 1px solid $divider-color;
-  padding: 10px;
-  .info-row-image {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 10%;
-  };
-  .info-row-text-container {
-    display: flex;
-    flex-direction: column;
-    margin-left: 20px;
-  };
-  .info-row-line-one {
-    color: $primary-color-text;
-    font-size: 2em;
-  };
-  .info-row-line-two {
-    color: $secondary-text-color;
-    font-size: 1.5em;
-  }
 }
 
 .footer-button-container {
