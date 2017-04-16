@@ -20,6 +20,19 @@
 @import "colors";
 @import "font-awesome";
 
+.nav-button {
+  background-color: $accent-color;
+  border-radius: 5px;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+
+.margin-right {
+  margin-right: 15px;
+}
+
 body {
   margin: 0px;
   background-color: $page-background;

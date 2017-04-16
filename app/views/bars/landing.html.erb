@@ -1,7 +1,19 @@
 <%= render "/layouts/navbar" %>
+<%= render "/layouts/flashalert" %>
 <div class="landing-header">
-  <h1>Brew Cards</h1>
-  <h3>Design,&nbsp&nbsp Download,&nbsp&nbsp Drink!</h3>
+
+  <div class="text">
+    <div class="heading-column">
+      <h1>Brew Cards</h1>
+      <h3>Design,&nbsp&nbsp Download,&nbsp&nbsp Drink!</h3>
+    </div>
+  </div>
+
+  <div class="image">
+    <%= image_tag "logoLarge.png", class: 'logo' %>
+  </div>
+
+
 </div>
 
 <div class="divider"></div>
@@ -30,9 +42,7 @@
       <p>Free app available on iTunes and Google Play. Your account will show instantly.<p>
     </div>
   </div>
-</div>
 
-<div class="card-row-container">
   <div class="card">
     <div class="card-heading">
       <p>Drink!</p>
@@ -56,9 +66,7 @@
       <p>As soon as you update your card here, it's updated on the app!<p>
       </div>
     </div>
-</div>
 
-<div class="card-row-container">
   <div class="card">
     <div class="card-heading">
       <p>Home Brewer?</p>

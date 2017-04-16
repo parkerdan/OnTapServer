@@ -8,6 +8,11 @@
 // $secondary-text-color: #757575;
 // $divider-color:        #BDBDBD;
 
+.nav-bar-logo {
+  height: 30px;
+  width: 30px;
+}
+
 .navbar-main {
   background-color: $primary-color-dark;
   display: flex;
@@ -18,7 +23,6 @@
 .nav-header {
   display: flex;
   flex-direction: row;
-  flex:1;
   a {
     display: flex;
     align-items: center;
@@ -27,20 +31,13 @@
 
 .nav-body {
   display: flex;
+  flex: 1;
   flex-direction: row;
-  flex:3;
   justify-content: flex-end;
+  align-items: center;
 };
 
-.nav-button {
-  background-color: $accent-color;
-  margin-right: 30px;
-  padding:5px;
-  border-radius: 5px;
-  box-shadow: 1px 1px 1px $primary-text-color;
-  display: flex;
-  align-items: center;
-  a {
-    color: white;
-  };
+.nav-gray-text {
+  color: $secondary-text-color;
+  margin-left: 15px;
 };

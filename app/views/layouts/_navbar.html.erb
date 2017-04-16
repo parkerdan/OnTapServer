@@ -3,18 +3,13 @@
   <div class="nav-header">
 
       <%= link_to bars_path do %>
-        <%= image_tag("favicon.ico") %>
+        <%= image_tag "logoSmall.png", class: "nav-bar-logo" %>
       <% end %>
 
 
 
     <% if user_signed_in? %>
-      <div class="nav-container">
-        <p>Welcome to Brew Cards!</p>
-      </div>
-      <div class="nav-container">
-        <%= link_to "DONATE TODAY", new_charge_path %>
-      </div>
+      <%= link_to "Donate to Brew Cards", new_charge_path, class: "nav-gray-text" %>
     <% end %>
 
   </div>
@@ -24,44 +19,30 @@
   <div class="nav-body">
     <% if user_signed_in? %>
 
-    <div class="nav-container">
-      <%= link_to "My Bar(s)", user_bars_path %>
-    </div>
+      <%= link_to "My Account", user_bars_path, class: "nav-gray-text" %>
 
-    <div class="nav-container">
-      <%= link_to "Create Bar", new_bar_path %>
-    </div>
+      <%= link_to "Create Bar", new_bar_path, class: "nav-gray-text" %>
 
-    <div class="nav-container">
-      <%= link_to "All Bars", bars_path %>
-    </div>
+      <%= link_to "All Bars", bars_path, class: "nav-gray-text" %>
 
-    <div class="nav-container">
-      <%= link_to "Sign Out", sessions_path, method: :delete %>
-    </div>
+      <%= link_to "Sign Out", sessions_path, class: "nav-gray-text", method: :delete %>
 
-    <div class="nav-container">
-      <%= link_to "Edit Account", edit_users_path %>
-    </div>
+      <%= link_to "Edit Account", edit_users_path, class: "nav-gray-text margin-right" %>
 
 
     <% else %>
 
-    <div class="nav-button">
       <!-- for production link to secure heroku site -->
       <!-- <%= link_to "Sign In", "https://brewcards.herokuapp.com/sessions/new", class:"primary-text" %> -->
       <!-- for dev link to local  -->
-      <%= link_to "Sign In", new_session_path, class:"primary-text" %>
+        <%= link_to "Sign In", new_session_path, class: "nav-button margin-right"  %>
 
-    </div>
 
-    <div class="nav-button">
       <!-- for production link to secure heroku site -->
       <!-- <%= link_to "Register", "https://brewcards.herokuapp.com/users/new", class: "primary-text" %> -->
       <!-- for dev link to local  -->
-      <%= link_to "Register", new_user_path, class: "primary-text" %>
+      <%= link_to "Register", new_user_path, class: "nav-button margin-right" %>
 
-    </div>
 
     <% end %>
   </div>
