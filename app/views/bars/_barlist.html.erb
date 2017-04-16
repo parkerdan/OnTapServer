@@ -1,13 +1,21 @@
-<div class="margin-left">
-  <div class="bars-columns">
-      <% @bars.each do |bar| %>
-        <%= link_to bar, class: "bar-list-container grey-text" do %>
-          <h2><%= bar.title %></h2>
-            <p class="bar-tap-number"><%= Tap.where("bar_id = ? AND show_card = ?",bar.id,true).count %> Public Brew Cards<p>
-            <p class="bar-tap-number"><%= Tap.where("bar_id = ? AND show_card = ? AND show_recipe = ? AND length(recipe) > ?",bar.id,true,true,0).count %> Public Recipes<p>
-            <p class="bar-tap-number"><%= bar.requests %> Mobile App Views</p>
-        <% end %>
-      <% end %>
+
+
+
+
+<div class="card-row-container">
+  <% @bars.each do |bar| %>
+    <%= link_to bar, class: "place-card" do %>
+    <div class="place-card-heading"><p><%= bar.title %></p></div>
+
+    <div class="place-card-detail">
+      <p><%= Tap.where("bar_id = ? AND show_card = ?",bar.id,true).count %> Public Brew Cards<p>
+        <p><%= Tap.where("bar_id = ? AND show_card = ? AND show_recipe = ? AND length(recipe) > ?",bar.id,true,true,0).count %> Public Recipes<p>
+          <p><%= bar.requests %> Mobile App Views</p>
     </div>
-  </div>
+
+    <% end %>
+  <% end %>
+</div>
+
+
   <%= paginate @bars %>

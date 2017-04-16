@@ -1,11 +1,38 @@
 <%= simple_form_for(@bar) do |f| %>
+  <% if @bar.errors.any? %>
+  <ul>
+    <% @bar.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+  <% end %>
 
-  <div class="margin-left">
-    <h3 class="white-text"><%= f.label :title, "Bar Title" %></h3>
+  <div class="card-row-container">
 
-    <%= f.text_field :title, class: "text-input" %>
-    <br/>
+    <div class="register-card">
+      <div class="card-heading">
+        <p>Place Name</p>
+      </div>
+      <div class="card-center">
+        <%= f.text_field :title, class: "text-input" %>
+      </div>
+      <div class="card-footer">
+        <p>Place name must be unique to this site.</p>
+      </div>
+    </div>
 
-    <%= f.button :submit, class: "button green" %>
+    <div>
+
+      <%= f.button :submit, "Save", class: "sign-up-button" %>
+
+      <% if @bar.user_id == current_user.id %>
+      <%= button_to 'Destroy', @bar, method: :delete, data: { confirm: 'Really???' }, class: "sign-up-button red-background" %>
+      <% end %>
+    </div>
+
+
+
+
+
   </div>
 <% end %>

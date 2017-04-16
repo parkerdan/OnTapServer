@@ -1,8 +1,12 @@
-<div class="beer-image">
+<%= render "/layouts/header", heading: 'Edit ' + @bar.title, subText: false, size: 'small' %>
+
+<%= render 'form' %>
+<!-- <%= link_to 'Destroy', @bar, method: :delete, data: { confirm: 'Really???' }, class: "button red" %> -->
+
+<!-- <div class="beer-image">
   <div class="margin-left">
     <h1 class="section-header">Editing Bar</h1>
 
-    <%= render 'form' %>
     <br/>
     <div class="margin-left">
       <p>
@@ -11,4 +15,4 @@
     </div>
   </div>
 
-</div>
+</div> -->

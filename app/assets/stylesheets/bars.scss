@@ -1,3 +1,36 @@
+@import "colors";
+
+.place-card {
+  width: 300px;
+  height: 180px;
+  border-radius: 10px;
+  border: 1px solid $accent-color;
+  text-decoration: none;
+  margin: 10px 10px 0px 10px;
+  background-color: $primary-color-light;
+  overflow: hidden;
+
+  .place-card-heading {
+    background-color: $primary-color-dark;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    border-bottom: 1px solid $divider-color;
+    p {
+      margin: 0px;
+      color: $primary-text-color;
+      font-size: 2em;
+    }
+  }
+  .place-card-detail {
+    p {
+      color: $secondary-text-color;
+      margin: 10px;
+      font-size: 1.5em;
+    }
+  }
+}
+
 
 // *****************************************************  RIBBON *********************************
 .ribbon {
