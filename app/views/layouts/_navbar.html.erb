@@ -1,11 +1,13 @@
-<div class="my-nav">
+<div class="navbar-main">
 
   <div class="nav-header">
-    <div class="nav-container">
+
       <%= link_to bars_path do %>
-        <%= image_tag("24.png", size: "48x40", alt: "Logo", class:"clear-top") %>
+        <%= image_tag("favicon.ico") %>
       <% end %>
-    </div>
+
+
+
     <% if user_signed_in? %>
       <div class="nav-container">
         <p>Welcome to Brew Cards!</p>
@@ -14,6 +16,7 @@
         <%= link_to "DONATE TODAY", new_charge_path %>
       </div>
     <% end %>
+
   </div>
 
 
@@ -44,12 +47,20 @@
 
     <% else %>
 
-    <div class="nav-container">
-      <%= link_to "Sign In", "https://brewcards.herokuapp.com/sessions/new" %>
+    <div class="nav-button">
+      <!-- for production link to secure heroku site -->
+      <!-- <%= link_to "Sign In", "https://brewcards.herokuapp.com/sessions/new", class:"primary-text" %> -->
+      <!-- for dev link to local  -->
+      <%= link_to "Sign In", new_session_path, class:"primary-text" %>
+
     </div>
 
-    <div class="nav-container">
-      <%= link_to "Register", "https://brewcards.herokuapp.com/users/new" %>
+    <div class="nav-button">
+      <!-- for production link to secure heroku site -->
+      <!-- <%= link_to "Register", "https://brewcards.herokuapp.com/users/new", class: "primary-text" %> -->
+      <!-- for dev link to local  -->
+      <%= link_to "Register", new_user_path, class: "primary-text" %>
+
     </div>
 
     <% end %>

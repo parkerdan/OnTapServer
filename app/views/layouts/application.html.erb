@@ -9,12 +9,6 @@
 </head>
 <body>
 
-  <div id="screen-warning">
-    <h1>Screen too small!!</h1>
-    <h3>Increse your window size to use this site, not optimized for small screens....sorry, but not sorry ;)</h3>
-  </div>
-<div id="my-content">
-
   <%= render "/layouts/navbar" %>
   <% if flash[:notice] %>
   <div class="alert green-opacity center-all" role="alert"><%= flash[:notice] %></div>
@@ -22,6 +16,7 @@
   <div class="alert red-opacity center-all" role="alert"><%= flash[:alert] %></div>
   <% end %>
     <%= yield %>
-</div>
+
+
 </body>
 </html>
