@@ -1,0 +1,16 @@
+<div class="landing-header <%= (size == 'small') ? 'landing-header-small':'landing-header-large' %>">
+  <div class="text">
+    <div class="heading-column">
+      <h1><%= heading %></h1>
+      <% if subText %>
+      <h3>Design,&nbsp&nbsp Download,&nbsp&nbsp Drink!</h3>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="image">
+    <%= image_tag "logoLarge.png", class: (size == "small") ? "logo-small":"logo-large" %>
+  </div>
+
+</div>
+<div class="divider"></div>

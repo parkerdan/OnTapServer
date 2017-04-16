@@ -1,10 +1,5 @@
-<div class="register-header">
-  <h1>Edit Account</h1>
-</div>
-
-<div class="divider"></div>
-
-  <%= render 'form' %>
+<%= render "/layouts/header", heading:'Edit Account', subText: false, size: 'small' %>
+<%= render 'form' %>
 
 
   <% if @user.persisted? && @user.subscription_id != "" %>

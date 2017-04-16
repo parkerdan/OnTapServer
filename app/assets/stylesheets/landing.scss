@@ -1,24 +1,29 @@
 @import "colors";
-// $primary-color-dark:   #FFA000;
-// $primary-color:        #FFC107;
-// $primary-color-light:  #FFECB3;
-// $primary-color-text:   #212121;
-// $accent-color:         #009688;
-// $primary-text-color:   #212121;
-// $secondary-text-color: #757575;
-// $divider-color:        #BDBDBD;
 
-.logo {
+.logo-large {
   height: 200px;
   width: 200px;
   border-radius: 20px;
 }
 
+.logo-small {
+  height: 100px;
+  width: 100px;
+  border-radius: 20px;
+}
+
+.landing-header-large {
+  padding: 40px 0px 80px 0px;
+}
+.landing-header-small {
+  padding: 20px 0px 40px 0px;
+}
+
+
 .landing-header {
   background-color: $primary-color;
   display: flex;
   flex-direction: column;
-  padding: 40px 0px 80px 0px;
   justify-content: center;
   @media (min-width: 700px) {
     flex-direction: row;
