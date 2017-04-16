@@ -1,0 +1,92 @@
+@import "colors";
+
+.card-maker {
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 700px) {
+    flex-direction: row;
+  }
+}
+
+.card-form {
+  display: flex;
+  width: 100%;
+  @media (min-width: 700px) {
+    /* Firefox */
+    width: -moz-calc(100% - 320px);
+    /* WebKit */
+    width: -webkit-calc(100% - 320px);
+    /* Opera */
+    width: -o-calc(100% - 320px);
+    /* Standard */
+    width: calc(100% - 320px);
+  }
+
+}
+
+.card-preview {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+  align-items: center;
+  @media (min-width: 700px) {
+    position: fixed;
+    right: 0;
+  }
+  h1 {
+    text-align: center;
+  }
+  .card-preview-card {
+    display: flex;
+    padding: 10px;
+    border: 2px solid $divider-color;
+    border-radius: 5px;
+    height: 400px;
+    width: 250px;
+    flex-direction: column;
+  }
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 900px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.form-column {
+  display: flex;
+  flex-direction: column;
+  flex:1;
+  align-items: center;
+  margin-bottom: 50px;
+  h2 {
+    color: $primary-color-text;
+    text-align: center;
+    margin: 10px 20px;
+  }
+}
+
+.hop-slider {
+  width: 80%;
+}
+
+.image-selector {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.option-container {
+  display: flex;
+  flex-direction: column;
+  margin: 30px 15px 0px 15px;
+  align-items: center;
+  justify-content: center;
+  .margin-bottom {
+    margin-bottom: 15px;
+  }
+}

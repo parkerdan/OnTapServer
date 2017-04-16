@@ -1,84 +1,87 @@
-<div class="tap-maker">
-  <div class="tap-maker-col-one">
+<div class="card-maker">
+  <div class="card-form">
     <%= simple_form_for([@bar,@tap]) do |f| %>
 
-    <div class="margin-left">
-      <h2>Title</h2>
-      <%= f.text_field :title, id: "tap-title", class:"text-input", data: {title: @tap.title} %>
+    <div class="form-row">
+      <div class="form-column">
+        <h2>Title</h2>
+        <%= f.text_field :title, id: "tap-title", class:"text-input", data: {title: @tap.title} %>
+      </div>
+      <div class="form-column">
+        <h2>Description</h2>
+        <%= f.text_area :description, id: "tap-description", class:"text-field", data: {description: @tap.description} %>
+      </div>
     </div>
 
-    <div class="margin-left">
-      <h2>Description</h2>
-      <%= f.text_area :description, id: "tap-description", class:"text-field", data: {description: @tap.description} %>
-    </div>
-
-
-    <div class="color-pickers">
-      <div class="color-picker center-all">
-        <h4>Background Color</h4>
+    <div class="form-row">
+      <div class="form-column">
+        <h2>Background Color</h2>
         <%= f.text_field :color, id: "beer-color", data: {color: @tap.color} %>
       </div>
 
-      <div class="color-picker center-all">
-        <h4>Text Color</h4>
-        <div id="selected-text"></div>
+      <div class="form-column">
+        <h2>Text Color</h2>
         <%= f.text_field :text_color, id: "text-color", data: {textColor: @tap.text_color} %>
       </div>
-
     </div>
 
 
-
-    <div>
-      <h2>Hoppiness <small>( ..move slider.. )</small></h2>
-      <div id="hoppiness-value"></div>
-      <%= f.hidden_field :hoppiness, id: "tap-model-hop-val", data: {hoppiness: @tap.hoppiness,selectedimage:@tap.image_id} %>
-    </div>
-
-
-
-    <div>
-      <h2>Select Image to display</h2>
-
-      <div class="image-selector">
-        <% i = 0 %>
-        <% while i < 45 do %>
-        <div class="option-container center-all" data-image_id="<%= i %>">
-          <div class="radio-button">
-            <%= f.radio_button(:image_id, i, class: "margin-horizontal", id:"option-#{i}") %>
-          </div>
-          <label for="option-<%= i %>">
-            <%= image_tag "#{i}.png" %>
-          </label>
-        </div>
-        <% i += 1 %>
-        <% end %>
+    <div class="form-column">
+      <h2>Add Hopps? <small>( ..move slider.. )</small></h2>
+      <div class="hop-slider">
+        <div id="hoppiness-value"></div>
       </div>
+        <%= f.hidden_field :hoppiness, id: "tap-model-hop-val", data: {hoppiness: @tap.hoppiness,selectedimage:@tap.image_id} %>
     </div>
 
+
+    <div class="form-column">
+      <h2>Select Image to display</h2>
+    </div>
+
+
+
+
+
+    <div class="image-selector">
+      <% i = 0 %>
+      <% while i < 45 do %>
+      <div class="option-container" data-image_id="<%= i %>">
+          <%= f.radio_button(:image_id, i, class: "margin-bottom", id:"option-#{i}") %>
+        <label for="option-<%= i %>">
+          <%= image_tag "#{i}.png" %>
+        </label>
+      </div>
+      <% i += 1 %>
+      <% end %>
+    </div>
+
+    <div class="form-column">
+      <h2>Show this card on the website AND the mobile app?</h2>
+      <h2>If unchecked this card, and all it's information, is only visible to you on this website.</h2>
       <%= f.input :show_card, label: "Public Card", as: :boolean, class: "checkbox" %>
-      <p>Show this card on the website AND the mobile app?</p>
-      <p>If unchecked this card and all it's information in visible to only YOU through this website</p>
+    </div>
 
 
-    <h2>Recipe</h2>
-    <p>Store your recipe information here.</p>
-    <%= f.text_area :recipe, id: "recipe" %>
+    <div class="form-column">
+      <h2>Recipe</h2>
+      <p>Store your recipe here. You can keep it hidden from others if you want to.</p>
+      <%= f.text_area :recipe, id: "recipe", class: "text-field" %>
 
 
+      <h2>Share this recipe on the web and mobile apps?</h2>
+      <%= f.input :show_recipe, label: "Show this information?", as: :boolean, class: "checkbox" %>
+    </div>
 
-      <%= f.input :show_recipe, label: "Show Recipe?", as: :boolean, class: "checkbox" %>
-      <p>Optionally share your recipe on Public cards through the web and mobile apps</p>
-
-    <div>
-      <%= f.submit "Save",class: "button green" %>
+    <div class="form-column">
+      <%= f.button :submit, "Save", class: "sign-up-button" %>
     </div>
     <% end %>
   </div>
 
-  <div class="tap-preview">
+  <div class="card-preview">
     <h1>Card Preview</h1>
-    <div class="preview-card" id="selected-color">
+    <div class="card-preview-card" id="selected-color">
 
       <div class="card-title center-all">
         <h1 class="selected-text" id="title-preview" >Title</h1>

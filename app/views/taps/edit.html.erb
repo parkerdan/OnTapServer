@@ -1,9 +1,5 @@
-<div class="page-container">
-
-  <h1>Editing Card</h1>
+<%= render "/layouts/header", heading:'Edit Card', subText: false, size: 'small' %>
 
   <%= render 'form' %>
 
       <%= button_to 'Destroy', [@bar,@tap], method: :delete, data: { confirm: 'Are you sure?' }, class: "button red" %>
-      
-</div>

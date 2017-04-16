@@ -39,16 +39,16 @@
       <%= link_to "New Place", new_bar_path, class: "nav-gray-text" %>
       <%= link_to "All Places", bars_path, class: "nav-gray-text" %>
       <%= link_to "Sign Out", sessions_path, class: "nav-gray-text", method: :delete %>
-      <%= link_to "Edit Account", edit_users_path, class: "nav-gray-text margin-right" %>
+      <%= link_to "Edit Account", edit_users_path, class: "nav-gray-text" %>
       <% else %>
       <!-- for production link to secure heroku site -->
       <!-- <%= link_to "Sign In", "https://brewcards.herokuapp.com/sessions/new", class:"accent-button margin-right" %> -->
       <!-- for dev link to local  -->
-      <%= link_to "Sign In", new_session_path, class: "accent-button margin-right"  %>
+      <%= link_to "Sign In", new_session_path, class: "nav-gray-text"  %>
       <!-- for production link to secure heroku site -->
       <!-- <%= link_to "Register", "https://brewcards.herokuapp.com/users/new", class: "accent-button margin-right" %> -->
       <!-- for dev link to local  -->
-      <%= link_to "Register", new_user_path, class: "accent-button margin-right" %>
+      <%= link_to "Register", new_user_path, class: "nav-gray-text" %>
       <% end %>
     </div>
   </div>
