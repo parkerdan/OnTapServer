@@ -90,3 +90,47 @@
     margin-bottom: 15px;
   }
 }
+
+.card-title {
+  display: flex;
+  flex: .8;
+  align-items: center;
+  justify-content: center;
+  h1 {
+    margin: 0px;
+    text-align: center;
+    font-size: 2em;
+  }
+}
+
+.card-hops {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  .card-hop-pic {
+    height: 40px;
+    width: 25px
+  }
+}
+
+.card-image {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.card-description {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  p {
+    text-align: center;
+    font-size: 1.3em;
+    text-align: center;
+  }
+}

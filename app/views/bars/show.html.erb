@@ -1,34 +1,13 @@
 <%= render "/layouts/header", heading: @bar.title, subText: false, size: 'small' %>
 
 
+<% if user_signed_in? && @bar.user_id == current_user.id %>
+<div class="user-place-action-row">
+    <%= link_to 'Update Place', edit_bar_path(@bar) %>
+    <%= link_to 'Add Card', new_bar_tap_path(@bar) %>
+</div>
+<% end %>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="beer-image">
-  <div class="margin-left">
-    <div class="bar-title-container">
-      <h1 class="bar-title"><%= @bar.title %> </h1>
-      <% if user_signed_in? && @bar.user_id == current_user.id %>
-      <div class="margin-left">
-        <%= link_to 'Update Bar Info', edit_bar_path(@bar), class: "button blue margin-left" %>
-
-        <%= link_to 'Add Brew Card', new_bar_tap_path(@bar), class: "button green margin-left" %>
-      </div>
-      <% end %>
-
-    </div>
 
     <% if @taps.count > 0 %>
     <div class="bars-taps-container grey-text">

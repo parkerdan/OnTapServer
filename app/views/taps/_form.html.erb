@@ -27,7 +27,7 @@
 
 
     <div class="form-column">
-      <h2>Add Hopps? <small>( ..move slider.. )</small></h2>
+      <h2>Add Hops? <small>( ..move slider.. )</small></h2>
       <div class="hop-slider">
         <div id="hoppiness-value"></div>
       </div>
@@ -38,10 +38,6 @@
     <div class="form-column">
       <h2>Select Image to display</h2>
     </div>
-
-
-
-
 
     <div class="image-selector">
       <% i = 0 %>
@@ -73,8 +69,12 @@
       <%= f.input :show_recipe, label: "Show this information?", as: :boolean, class: "checkbox" %>
     </div>
 
-    <div class="form-column">
+    <div class="form-row">
       <%= f.button :submit, "Save", class: "sign-up-button" %>
+      <% if @tap.id %>
+      <%= button_to 'Destroy', [@bar,@tap], method: :delete, data: { confirm: 'Are you sure?' }, class: "sign-up-button red-background" %>
+      <% end %>
+
     </div>
     <% end %>
   </div>
@@ -83,18 +83,18 @@
     <h1>Card Preview</h1>
     <div class="card-preview-card" id="selected-color">
 
-      <div class="card-title center-all">
+      <div class="card-title">
         <h1 class="selected-text" id="title-preview" >Title</h1>
       </div>
 
-      <div class="card-hops center-all" id="hops">
+      <div class="card-hops" id="hops">
       </div>
 
-      <div class="card-picture center-all">
+      <div class="card-image">
         <%= image_tag "", id:"selected-image" %>
       </div>
 
-      <div class="card-description center-all">
+      <div class="card-description">
         <p class="selected-text" id="description-preview">Description</p>
       </div>
 

@@ -31,6 +31,21 @@
   }
 }
 
+.user-place-action-row {
+  display: flex;
+  flex-direction: row;
+  a {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: $accent-color;
+    text-decoration: none;
+    margin: 30px;
+    color: white;
+  }
+}
+
+
+
 
 // *****************************************************  RIBBON *********************************
 .ribbon {

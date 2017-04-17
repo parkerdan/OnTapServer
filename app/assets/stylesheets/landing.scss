@@ -21,7 +21,7 @@
 
 
 .landing-header {
-  background-color: $primary-color;
+  background: linear-gradient( $primary-color-dark,$primary-color,$primary-color, $primary-color-light );
   display: flex;
   flex-direction: column;
   justify-content: center;

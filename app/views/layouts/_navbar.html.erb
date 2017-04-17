@@ -14,9 +14,9 @@
 
   <div class="nav-body no-dropdown">
       <% if user_signed_in? %>
+      <%= link_to "Home", bars_path, class: "nav-gray-text" %>
       <%= link_to "My Places", user_bars_path, class: "nav-gray-text" %>
       <%= link_to "New Place", new_bar_path, class: "nav-gray-text" %>
-      <%= link_to "All Places", bars_path, class: "nav-gray-text" %>
       <%= link_to "Sign Out", sessions_path, class: "nav-gray-text", method: :delete %>
       <%= link_to "Edit Account", edit_users_path, class: "nav-gray-text margin-right" %>
       <% else %>
@@ -35,9 +35,9 @@
     <%= fa_icon "bars 2x", class: "margin-right accent-color" %>
     <div class="dropdown-content">
       <% if user_signed_in? %>
+      <%= link_to "Home", bars_path, class: "nav-gray-text" %>
       <%= link_to "My Places", user_bars_path, class: "nav-gray-text" %>
       <%= link_to "New Place", new_bar_path, class: "nav-gray-text" %>
-      <%= link_to "All Places", bars_path, class: "nav-gray-text" %>
       <%= link_to "Sign Out", sessions_path, class: "nav-gray-text", method: :delete %>
       <%= link_to "Edit Account", edit_users_path, class: "nav-gray-text" %>
       <% else %>
